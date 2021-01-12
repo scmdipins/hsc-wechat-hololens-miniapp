@@ -22,3 +22,5 @@
   </view>
 </view>
 
+<input-modal id="inputModal" title="{{itemTitle}}" ></input-modal>
+

@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "drop-down-select": "../../components/dropDownSelect/select",
-    "check-item": "../../components/checkItem/checkitem"
+    "check-item": "../../components/checkItem/checkitem",
+    "input-modal": "../../components/InputModal/inputModal"
   }, 
   "navigationBarTitleText": "PM 填写"
 }

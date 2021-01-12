@@ -17,40 +17,20 @@ Page({
         'value': '其他'
       }
     ],
-    cardList: [
-      {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      },
-    ]
+
+    itemTitle: '符合呵呵额庐计费和二二二二额鹅鹅鹅符合呵呵额庐计费和二二二二额鹅鹅鹅符合呵呵额庐计费和二二二二额鹅鹅鹅'
+  },
+
+  showInputModal: function() {
+    this.inputModal.showModal();
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.inputModal = this.selectComponent('#inputModal');
+    this.showInputModal();
   },
 
   select: function(e) {

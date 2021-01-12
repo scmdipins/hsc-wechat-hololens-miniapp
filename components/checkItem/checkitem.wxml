@@ -4,7 +4,7 @@
       abc
     </view>
     <view class="status">
-      fewe
+      <drop-down-select-input class="select" prop-array="{{selectArray}}" bind:select="select"></drop-down-select-input>
     </view>
   </view>
   <view class="fail-reason">

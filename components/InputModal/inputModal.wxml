@@ -1,0 +1,12 @@
+<modal backgroundColor="rgba(0,0,0,0.5)" show="{{showInputModal}}">
+  <view class="content-box">
+    <view class="content-dialog">
+      <text class="title text">{{title}}</text>
+      <input class="input" type="text" />
+      <view class="control-panel">
+        <view catchtap="hideModal" class="btn btn-cancel text">取消</view>
+        <view class="btn btn-confirm text" bindtap="confirm" hoverClass="none">确认</view>
+      </view>
+    </view>
+  </view>
+</modal>
