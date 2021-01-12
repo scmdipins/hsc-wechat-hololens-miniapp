@@ -1,0 +1,13 @@
+<view class="content-box">
+  <view class="content">
+    <view class="text">
+      abc
+    </view>
+    <view class="status">
+      fewe
+    </view>
+  </view>
+  <view class="fail-reason">
+    <textarea-count min="0" max="150" bind:failReason="getFailReason"></textarea-count>
+  </view>
+</view>

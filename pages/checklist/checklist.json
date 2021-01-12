@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "drop-down-select": "../../components/dropDownSelect/select",
+    "check-item": "../../components/checkItem/checkitem"
+  }, 
+  "navigationBarTitleText": "PM 填写"
+}

@@ -1,0 +1,12 @@
+<!-- auth setting modal -->
+<modal backgroundColor="rgba(0,0,0,0.6)" show="{{showAuthSettingModal}}">
+  <view class="setting-box">
+    <view class="setting-dialog">
+      <text class="setting-text text">{{authText}}</text>
+      <view class="control-panel">
+        <button catchtap="hideAuthModal" class="setting-button text">取消</button>
+        <button class="setting-button text" bindopensetting="openSettingPage" hoverClass="none" open-type="openSetting">去设置</button>
+      </view>
+    </view>
+  </view>
+</modal>
