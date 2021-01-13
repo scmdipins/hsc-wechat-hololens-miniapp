@@ -5,6 +5,7 @@ Component({
   properties: {
     min: Number,
     max: Number,
+    content: String
   },
 
   /**
@@ -26,7 +27,7 @@ Component({
         currentWordNumber: len 
       });
       if (len > this.data.max) return;
-      this.triggerEvent('failReason', value);
+      this.triggerEvent('reason', value);
     }
   }
 })

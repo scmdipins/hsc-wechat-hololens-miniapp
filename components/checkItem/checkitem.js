@@ -21,13 +21,21 @@ Component({
    */
   methods: {
 
-    getFailReason: function(e) {
-      console.log(e.detail)
+    getFailedReason: function(e) {
+      var checkItem = this.data.checkItem
+      checkItem.failedReason = e.detail
+      this.setData({
+        checkItem: checkItem
+      })
     },
 
     select: function(e) {
-      console.log(e.detail)
       this.triggerEvent('select', e.detail)
+      var checkItem = this.data.checkItem
+      checkItem.result = e.detail
+      this.setData({
+        checkItem: checkItem
+      })
     }
   }
 })

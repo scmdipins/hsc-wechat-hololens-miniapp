@@ -6,6 +6,6 @@
     </view>
   </view>
   <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason">
-    <textarea-count min="0" max="150" bind:failReason="getFailReason">{{checkItem.failedReason}}</textarea-count>
+    <textarea-count min="0" max="150" bind:reason="getFailedReason" content="{{checkItem.failedReason}}"></textarea-count>
   </view>
 </view> 
