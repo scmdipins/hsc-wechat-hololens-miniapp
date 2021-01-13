@@ -1,8 +1,6 @@
 <view class="content-box">
   <view class="content">
-    <view class="text">
-      {{checkItem.name}}
-    </view>
+    <view class="name">{{checkItem.name}}</view>
     <view class="status">
       <drop-down-select-input class="select" prop-array="{{checkItem.status}}" bind:select="select"></drop-down-select-input>
     </view>
@@ -10,4 +8,4 @@
   <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason">
     <textarea-count min="0" max="150" bind:failReason="getFailReason">{{checkItem.failedReason}}</textarea-count>
   </view>
-</view>
+</view> 
