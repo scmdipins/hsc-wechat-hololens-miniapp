@@ -16,6 +16,10 @@ Component({
     
   },
 
+  ready() {
+    console.log(this.data.checkItem)
+  },
+
   /**
    * Component methods
    */
@@ -30,12 +34,12 @@ Component({
     },
 
     select: function(e) {
-      this.triggerEvent('select', e.detail)
       var checkItem = this.data.checkItem
       checkItem.result = e.detail
       this.setData({
         checkItem: checkItem
       })
+      this.triggerEvent('select', checkItem)
     }
   }
 })

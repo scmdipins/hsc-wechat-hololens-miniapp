@@ -43,9 +43,13 @@ Component({
       var currentItem = this.properties.propArray[currentIndex]
       var currentText = currentItem.text || currentItem.value || currentItem
       this.setData({
-        selectShow: false,
-        selectText: currentText
+        selectShow: false
       })
+      if (currentText !== '手工输入') {
+        this.setData({
+          selectText: currentText
+        })
+      }
       this.triggerEvent('select', currentText)
     }
   }

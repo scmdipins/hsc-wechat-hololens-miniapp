@@ -8,7 +8,6 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  background-color: lightgrey;
 }
 
 .name {
@@ -16,7 +15,6 @@
   flex: 1;
   justify-content: flex-start;
   align-items: center; 
-  background-color: yellow;
   min-height: 4.32vh;
   line-height: normal;
 }

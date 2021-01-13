@@ -11,7 +11,7 @@ Component({
    * Component initial data
    */
   data: {
-
+    inputValue: ''
   },
 
   /**
@@ -30,5 +30,16 @@ Component({
         showInputModal: false
       })
     },
+
+    blur: function(e) {
+      this.setData({
+        inputValue: e.detail.value
+      })
+    },
+
+    confirm: function() {
+      this.hideModal()
+      this.triggerEvent('confirm', this.data.inputValue)
+    }
   }
 })

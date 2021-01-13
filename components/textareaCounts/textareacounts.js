@@ -15,6 +15,13 @@ Component({
     currentWordNumber: 0
   },
 
+  ready: function() {
+    var length = this.data.content.length? this.data.content.length : 0
+    this.setData({
+      currentWordNumber: length
+    })
+  },
+
   /**
    * Component methods
    */

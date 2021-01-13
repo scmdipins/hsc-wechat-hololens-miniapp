@@ -17,5 +17,5 @@
   </view>
 </view>
 
-<input-modal id="inputModal" title="{{itemTitle}}" ></input-modal>
+<input-modal id="inputModal" title="{{currentAction.name}}" bind:confirm="getInput" ></input-modal>
 

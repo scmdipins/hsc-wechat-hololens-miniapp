@@ -2,7 +2,7 @@
   <view class="content-box">
     <view class="content-dialog">
       <text class="title text">{{title}}</text>
-      <input class="input" type="text" />
+      <input class="input" type="text" bindblur="blur" />
       <view class="control-panel">
         <view catchtap="hideModal" class="btn btn-cancel text">取消</view>
         <view class="btn btn-confirm text" bindtap="confirm" hoverClass="none">确认</view>
