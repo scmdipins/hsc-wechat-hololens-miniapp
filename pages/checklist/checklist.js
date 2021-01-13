@@ -8,8 +8,7 @@ Page({
   data: {
     chapterList: checkListServe.chapterList,
     chapterSelectIndex: 0,
-    actionList: [],
-    itemTitle: '符合呵呵额庐计费和二二二二额鹅鹅鹅符合呵呵额庐计费和二二二二额鹅鹅鹅符合呵呵额庐计费和二二二二额鹅鹅鹅'
+    actionList: []
   },
 
   /**
@@ -45,29 +44,39 @@ Page({
    */
   getResult: function(e) {
     var action = e.detail
-    var oriAction = this.data.actionList.filter(item => item.id == action.id)[0]
     if (action.result === '手工输入') {
       this.setData({
-        currentAction: oriAction
+        currentAction: action
       })
       this.showInputModal()
     }
+  },
+
+  cancelInput: function() {
+    var action = JSON.parse(JSON.stringify(this.data.currentAction))
+    action.result = action.oriResult
+    delete action.oriResult
+    this.updateActionList(action)
   },
 
   /**
    * get input when choose '手工输入' action
    */
   getInput: function(e) {
-    var action = this.data.currentAction
+    var action = JSON.parse(JSON.stringify(this.data.currentAction))
     action.result = e.detail
+    delete action.oriResult
+    this.updateActionList(action)
+  },
+
+  updateActionList(action) {
     var actionList = this.data.actionList
-    var index = 0
-    actionList.forEach((item, i) => {
-      if (action.id === item.id) {
-        index = i
+    actionList.forEach((item, index) => {
+      if (action.id == item.id) {
+        actionList[index] = action
       }
     })
-    actionList.slice(index, 1, action)
+    // actionList.push(action)
     this.setData({
       actionList: actionList
     })

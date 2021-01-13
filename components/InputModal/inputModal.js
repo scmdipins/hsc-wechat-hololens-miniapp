@@ -1,4 +1,5 @@
-// components/InputModal/inputModal.js
+const stringUril = require('../../utils/string.js')
+
 Component({
   /**
    * Component properties
@@ -37,9 +38,16 @@ Component({
       })
     },
 
+    cancel: function() {
+      this.hideModal()
+      this.triggerEvent('cancel', true)
+    },
+
     confirm: function() {
       this.hideModal()
-      this.triggerEvent('confirm', this.data.inputValue)
+      if (!stringUril.isStrBlank(this.data.inputValue)) {
+        this.triggerEvent('confirm', this.data.inputValue)
+      }
     }
   }
 })

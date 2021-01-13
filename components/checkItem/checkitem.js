@@ -13,11 +13,7 @@ Component({
    * Component initial data
    */
   data: {
-    
-  },
 
-  ready() {
-    console.log(this.data.checkItem)
   },
 
   /**
@@ -25,7 +21,7 @@ Component({
    */
   methods: {
 
-    getFailedReason: function(e) {
+    getFailedReason: function (e) {
       var checkItem = this.data.checkItem
       checkItem.failedReason = e.detail
       this.setData({
@@ -33,8 +29,9 @@ Component({
       })
     },
 
-    select: function(e) {
+    select: function (e) {
       var checkItem = this.data.checkItem
+      checkItem.oriResult = checkItem.result
       checkItem.result = e.detail
       this.setData({
         checkItem: checkItem
