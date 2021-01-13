@@ -1,13 +1,13 @@
 <view class="content-box">
   <view class="content">
     <view class="text">
-      abc
+      {{checkItem.name}}
     </view>
     <view class="status">
-      <drop-down-select-input class="select" prop-array="{{selectArray}}" bind:select="select"></drop-down-select-input>
+      <drop-down-select-input class="select" prop-array="{{checkItem.status}}" bind:select="select"></drop-down-select-input>
     </view>
   </view>
-  <view class="fail-reason">
-    <textarea-count min="0" max="150" bind:failReason="getFailReason"></textarea-count>
+  <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason">
+    <textarea-count min="0" max="150" bind:failReason="getFailReason">{{checkItem.failedReason}}</textarea-count>
   </view>
 </view>

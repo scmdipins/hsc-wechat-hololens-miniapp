@@ -1,40 +1,38 @@
-// pages/checklist/checklist.js
+const checkListServe = require('../../service/checkListService.js')
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    selectArray: [{
-        "id": "10",
-        "value": "会计类hohffffffffffffffffffffff"
-      }, {
-        "id": "21",
-        "text": "工程类"
-      },
-      '技术类',
-      {
-        'value': '其他'
-      }
-    ],
-
+    chapterList: checkListServe.chapterList,
+    chapterSelectIndex: 0,
+    actionList: [],
     itemTitle: '符合呵呵额庐计费和二二二二额鹅鹅鹅符合呵呵额庐计费和二二二二额鹅鹅鹅符合呵呵额庐计费和二二二二额鹅鹅鹅'
-  },
-
-  showInputModal: function() {
-    this.inputModal.showModal();
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    // var chapterList = this.data.checkList.map(({id, title}) => ({id, title}))
+    this.setItems(this.data.chapterSelectIndex)
     this.inputModal = this.selectComponent('#inputModal');
-    this.showInputModal();
+    // this.showInputModal();
   },
 
   select: function(e) {
     console.log(e.detail)
+    this.setItems(e.detail)
+  },
+
+  setItems: function(index) {
+    var chapter = this.data.chapterList[index]
+    this.setData({
+      actionList: chapter.actions
+    })
+    console.log(this.data.actionList)
   },
 
   prev: function() {
@@ -43,5 +41,10 @@ Page({
 
   next: function() {
     
+  },
+
+  showInputModal: function() {
+    this.inputModal.showModal();
   }
+
 })

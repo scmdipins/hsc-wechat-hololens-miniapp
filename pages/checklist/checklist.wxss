@@ -32,23 +32,6 @@
   margin-right: 4.8vw;
 }
  
-.card{
-  width: 47vw;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
-}
- 
-.card-box{
-  width: 100%;
-  height: 200rpx;
-  border-radius: 6rpx;
-  background: #ccc;
-}
- 
-.card-content{
-  color: blue;
-}
- 
 .footer{
   background-color: lightblue;
   flex: 0 0 10.6vh; 
