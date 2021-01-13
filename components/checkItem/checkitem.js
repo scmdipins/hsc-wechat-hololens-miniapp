@@ -23,6 +23,11 @@ Component({
 
     getFailReason: function(e) {
       console.log(e.detail)
+    },
+
+    select: function(e) {
+      console.log(e.detail)
+      this.triggerEvent('select', e.detail)
     }
   }
 })

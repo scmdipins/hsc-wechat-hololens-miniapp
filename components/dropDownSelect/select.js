@@ -6,8 +6,7 @@ Component({
   properties: {
     propArray: {
       type: Array
-    }
-    ,
+    },
     selectIndex: {
       type: Number,
       value: 0

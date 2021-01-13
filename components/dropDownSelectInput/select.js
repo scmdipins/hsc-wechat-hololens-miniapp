@@ -6,6 +6,9 @@ Component({
   properties: {
     propArray: {
       type: Array
+    },
+    result: {
+      type: String
     }
   },
 
@@ -14,7 +17,14 @@ Component({
    */
   data: {
     selectShow: false,
-    selectText: '请选择'
+    selectText: 'Select'
+  },
+
+  ready: function() {
+    var selectText = this.data.result ? this.data.result : 'Select'
+    this.setData({
+      selectText: selectText
+    })
   },
 
   /**
@@ -31,15 +41,12 @@ Component({
     setText: function(e) {
       var currentIndex = e.target.dataset.index
       var currentItem = this.properties.propArray[currentIndex]
-      if (currentItem.showModal) {
-        
-      }
       var currentText = currentItem.text || currentItem.value || currentItem
       this.setData({
         selectShow: false,
         selectText: currentText
       })
-      this.triggerEvent('select', currentItem)
+      this.triggerEvent('select', currentText)
     }
   }
 })

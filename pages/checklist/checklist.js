@@ -32,7 +32,13 @@ Page({
     this.setData({
       actionList: chapter.actions
     })
-    console.log(this.data.actionList)
+  },
+
+  getResult: function(e) {
+    console.log('result: ' + e.detail)
+    if (e.detail === '手工输入') {
+      this.showInputModal()
+    }
   },
 
   prev: function() {
