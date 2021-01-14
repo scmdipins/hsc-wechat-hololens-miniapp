@@ -5,7 +5,9 @@ Component({
   properties: {
     checkItem: {
       type: Object
-    }
+    },
+    min: Number,
+    max: Number
   },
 
   /**
@@ -38,12 +40,21 @@ Component({
       this.triggerEvent('select', checkItem)
     },
 
-    getFailedReason: function (e) {
+    inputs: function (e) {
+      var value = e.detail.value;
+      var len = parseInt(value.length);
+      this.setData({
+        currentWordNumber: len 
+      })
+      if (len > this.data.max) return;
+
       var checkItem = this.data.checkItem
-      checkItem.failedReason = e.detail
+      checkItem.failedReason = value
       this.setData({
         checkItem: checkItem
       })
+
+      console.log(this.data.checkItem)
     }
 
   }

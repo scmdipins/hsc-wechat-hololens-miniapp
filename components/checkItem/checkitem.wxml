@@ -15,8 +15,12 @@
     </view>
   </view>
 
-  <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason">
-    <textarea-count min="0" max="150" bind:reason="getFailedReason" content="{{checkItem.failedReason}}">
-    </textarea-count>
+  <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason-box">
+    <view class="fail-reason-content">
+      <textarea class="areas" placeholder='failed reason' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs"
+        value="{{checkItem.failedReason}}">
+        <text class="currentWordNumber">{{checkItem.failedReason.length? checkItem.failedReason.length : 0}}/{{max}}</text>
+      </textarea>
+    </view>
   </view>
 </view>

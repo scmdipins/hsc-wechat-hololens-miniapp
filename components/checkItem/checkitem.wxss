@@ -95,10 +95,35 @@
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkUlEQVRIS+2VMQrDMAxFpZtIPl4P0BIaQkJphh4gx/P3TVwCGdIh+V6yFHmV/J/1MEjl4qMX50sAqOFQFIp+DZjZQ0RqKeVD3WwNzb/I3XsReW33egDvFkgTIKU01VqHfaCqTjnnkUEowMxmVe0OgmYAzzPIKcDdV9c38soFwP2oh07AFLB6AJihWDjU0B8o+gLWlxwZvTT1owAAAABJRU5ErkJggg==");
 }
 
-
-.fail-reason {
+.fail-reason-box {
   margin-top: 1.5vh;
   width: 84.2vw;
   height: 11.61vh;
   margin-left: 4vw;
+}
+
+.fail-reason-content {
+  border: 1px solid #c4c4c4;
+  border-radius: 6rpx;
+  height: 100%;
+}
+
+.areas{
+  width: 100%;
+  height: 100%;
+  padding: 1.8vh 1.8vw;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #212121;
+  margin: 0 auto;
+  overflow: hidden;   
+  position: relative; 
+}
+
+.currentWordNumber{
+  font-size: 10px;
+  font-family: PingFangSC;
+  position: absolute;
+  right: 3vw;
+  bottom: 1.5vh;
 }
