@@ -25,7 +25,9 @@ Page({
    * select chapter
    */
   select: function(e) {
-    console.log(e.detail)
+    this.setData({
+      chapterSelectIndex: e.detail
+    })
     this.setItems(e.detail)
   },
 
@@ -49,6 +51,9 @@ Page({
         currentAction: action
       })
       this.showInputModal()
+    } else {
+      delete action.oriResult
+      this.updateActionList(action)
     }
   },
 
@@ -81,8 +86,21 @@ Page({
       actionList: actionList
     })
     console.log(this.data.actionList)
+
+    // this.updateChapterList()
   },
 
+  updateChapterList: function() {
+    var chapterList = this.data.chapterList
+    var currentIndex = this.data.chapterSelectIndex
+    var chapter = chapterList[currentIndex]
+    chapter.actions = this.data.actionList
+    chapterList[currentIndex] = chapter
+    this.setData({
+      chapterList: chapterList
+    })
+  },
+  
   prev: function() {
 
   },

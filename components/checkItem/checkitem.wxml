@@ -2,10 +2,27 @@
   <view class="content">
     <view class="name">{{checkItem.name}}</view>
     <view class="status">
-      <drop-down-select-input class="select" prop-array="{{checkItem.status}}" result="{{checkItem.result}}" bind:select="select"></drop-down-select-input>
+      <!-- <drop-down-select-input class="select" prop-array="{{checkItem.status}}" result="{{checkItem.result}}"
+        bind:select="select"></drop-down-select-input> -->
+
+      <view class="select-box">
+        <view class="select" bindtap="selectToggle">
+          <view class="show-text">{{ checkItem.result? checkItem.result : 'Select' }}</view>
+          <view class="icon {{selectShow ? 'icon-up' : 'icon-down'}}"></view>
+        </view>
+        <view class='options' wx:if="{{ selectShow }}">
+          <view wx:for="{{checkItem.status}}" data-index="{{ index }}" wx:key='index' class='option' bindtap='setText'>
+            {{ item.text || item.value || item }}</view>
+        </view>
+      </view>
+
+
+
     </view>
   </view>
+
   <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason">
-    <textarea-count min="0" max="150" bind:reason="getFailedReason" content="{{checkItem.failedReason}}"></textarea-count>
+    <textarea-count min="0" max="150" bind:reason="getFailedReason" content="{{checkItem.failedReason}}">
+    </textarea-count>
   </view>
-</view> 
+</view>
