@@ -1,4 +1,4 @@
-const checkListServe = require('../../service/checkListService.js')
+const moduleServe = require('../../service/moduleService.js')
 
 Page({
 
@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-    chapterList: checkListServe.chapterList,
+    chapterList: moduleServe.chapterList,
     chapterSelectIndex: 0,
     actionList: []
   },
