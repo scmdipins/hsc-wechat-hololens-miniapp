@@ -29,17 +29,16 @@
 .control-panel {
   width: inherit;
   display: flex;
-  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
 }
 
 .setting-button {
-  width: 24vw;
+  width: 28vw !important;
   height: 6.63vh;
   border: 2px solid #deeaff;
   font-size: 16px;
   color: #1c2d66;
   margin-left: 2.4vw;
-  margin-right: 2.4vw;
+  margin-right: 2.4vw; 
 }
