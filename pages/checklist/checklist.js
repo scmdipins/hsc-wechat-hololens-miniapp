@@ -15,16 +15,15 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    // var chapterList = this.data.checkList.map(({id, title}) => ({id, title}))
     this.setItems(this.data.chapterSelectIndex)
     this.inputModal = this.selectComponent('#inputModal');
-    // this.showInputModal();
   },
 
   /**
    * select chapter
    */
   select: function(e) {
+    this.updateChapterList()
     this.setData({
       chapterSelectIndex: e.detail
     })
@@ -39,12 +38,13 @@ Page({
     this.setData({
       actionList: chapter.actions
     })
+
   },
 
   /**
-   * get action result 
+   * set action result 
    */
-  getResult: function(e) {
+  setResult: function(e) {
     var action = e.detail
     if (action.result === '手工输入') {
       this.setData({
@@ -74,6 +74,14 @@ Page({
     this.updateActionList(action)
   },
 
+  /**
+   * set failed reason of the action
+   */
+  setReason: function(e) {
+    var action = e.detail
+    this.updateActionList(action)
+  },
+
   updateActionList(action) {
     var actionList = this.data.actionList
     actionList.forEach((item, index) => {
@@ -81,13 +89,10 @@ Page({
         actionList[index] = action
       }
     })
-    // actionList.push(action)
     this.setData({
       actionList: actionList
     })
-    console.log(this.data.actionList)
-
-    // this.updateChapterList()
+    
   },
 
   updateChapterList: function() {

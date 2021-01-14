@@ -56,7 +56,7 @@ Component({
       this.setData({
         checkItem: checkItem
       })
-      console.log(this.data.checkItem)
+      this.triggerEvent('reason', checkItem)
     }
 
   }

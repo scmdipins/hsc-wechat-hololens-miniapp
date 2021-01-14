@@ -6,7 +6,7 @@
     <scroll-view class='main-scroll' scroll-y style="height: 100%">
       <view class='main-list'>
         <block wx:key="index" wx:for="{{actionList}}">
-          <check-item check-item="{{item}}" min="0" max="150" bind:select="getResult"></check-item>
+          <check-item check-item="{{item}}" min="0" max="150" bind:select="setResult" bind:reason="setReason"></check-item>
         </block>
       </view>
     </scroll-view>
