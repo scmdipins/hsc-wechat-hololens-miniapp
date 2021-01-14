@@ -8,8 +8,6 @@
         <block wx:key="index" wx:for="{{actionList}}">
           <check-item check-item="{{item}}" bind:select="getResult"></check-item>
         </block>
-
-        
       </view>
     </scroll-view>
   </view>

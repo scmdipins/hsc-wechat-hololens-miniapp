@@ -1,7 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "textarea-count": "../textareaCounts/textareacounts",
-    "drop-down-select-input": "../dropDownSelectInput/select"
+    "textarea-count": "../textareaCounts/textareacounts"
   }
 }
