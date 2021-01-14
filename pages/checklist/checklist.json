@@ -2,7 +2,8 @@
   "usingComponents": {
     "drop-down-select": "../../components/dropDownSelect/select",
     "check-item": "../../components/checkItem/checkitem",
-    "input-modal": "../../components/InputModal/inputModal"
+    "input-modal": "../../components/InputModal/inputModal",
+    "camera-panel": "../../components/cameraPanel/camera"
   }, 
   "navigationBarTitleText": "PM 填写"
 }

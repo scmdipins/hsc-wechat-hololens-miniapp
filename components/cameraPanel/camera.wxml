@@ -1,0 +1,11 @@
+<view class="pic-panel">
+  <view class="pic">
+    <view wx:if="{{picture.path}}">
+    
+    </view>
+    <view wx:else>
+      <image class="camera"></image>
+    </view>
+  </view>
+  <view class="detail">{{picture.detail}}</view>
+</view>

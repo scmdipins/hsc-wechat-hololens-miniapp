@@ -8,15 +8,24 @@ Page({
   data: {
     chapterList: moduleServe.chapterList,
     chapterSelectIndex: 0,
-    actionList: []
+    actionList: [],
+    picList: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.setItems(this.data.chapterSelectIndex)
+    this.setActionList(this.data.chapterSelectIndex)
+    this.setPicList()
     this.inputModal = this.selectComponent('#inputModal');
+  },
+
+  setPicList: function() {
+    var chapter = this.data.chapterList[this.data.chapterSelectIndex]
+    this.setData({
+      picList: chapter.pics
+    })
   },
 
   /**
@@ -27,13 +36,13 @@ Page({
     this.setData({
       chapterSelectIndex: e.detail
     })
-    this.setItems(e.detail)
+    this.setActionList(e.detail)
   },
 
   /**
    * set actionList 
    */
-  setItems: function(index) {
+  setActionList: function(index) {
     var chapter = this.data.chapterList[index]
     this.setData({
       actionList: chapter.actions
