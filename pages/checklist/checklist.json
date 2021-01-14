@@ -3,7 +3,8 @@
     "drop-down-select": "../../components/dropDownSelect/select",
     "check-item": "../../components/checkItem/checkitem",
     "input-modal": "../../components/InputModal/inputModal",
-    "camera-panel": "../../components/cameraPanel/camera"
+    "camera-panel": "../../components/cameraPanel/camera",
+    "auth-modal": "../../components/authModal/authModal"
   }, 
   "navigationBarTitleText": "PM 填写"
 }

@@ -19,6 +19,7 @@ Page({
     this.setActionList(this.data.chapterSelectIndex)
     this.setPicList()
     this.inputModal = this.selectComponent('#inputModal');
+    this.authModal = this.selectComponent('#authModal');
   },
 
   setPicList: function() {
@@ -124,7 +125,14 @@ Page({
   },
 
   showInputModal: function() {
-    this.inputModal.showModal();
+    this.inputModal.showModal()
+  },
+
+  showCameraAuthModal: function(e) {
+    this.setData({
+      authText: e.detail
+    })
+    this.authModal.showAuthModal()
   }
 
 })

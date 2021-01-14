@@ -4,7 +4,7 @@
       <block wx:if="{{picture.path}}">
         <image class="pic-img" src="{{picture.path}}"></image>
       </block>
-      <view class="camera" wx:else bindtap="takePicture">
+      <view class="camera" wx:else bindtap="hasCameraAuth">
         <image class="camera-img"></image>
       </view>
     </view>

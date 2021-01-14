@@ -8,7 +8,7 @@
 
 .setting-dialog {
   background: white;
-  width: 80vw;
+  width: 75vw;
   padding-top: 4.31vh;
   padding-bottom: 2.49vh;
   border: 2px solid #deeaff;
@@ -27,13 +27,15 @@
 }
 
 .control-panel {
+  width: inherit;
   display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
 }
 
 .setting-button {
-  width: 29.33vw;
+  width: 24vw;
   height: 6.63vh;
   border: 2px solid #deeaff;
   font-size: 16px;
