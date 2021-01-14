@@ -46,7 +46,7 @@ Page({
    */
   setResult: function(e) {
     var action = e.detail
-    if (action.result === '手工输入') {
+    if (action.result === '手动输入') {
       this.setData({
         currentAction: action
       })
@@ -65,7 +65,7 @@ Page({
   },
 
   /**
-   * get input when choose '手工输入' action
+   * get input when choose '手动输入' action
    */
   getInput: function(e) {
     var action = JSON.parse(JSON.stringify(this.data.currentAction))
