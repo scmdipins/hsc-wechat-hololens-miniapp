@@ -17,7 +17,7 @@ const chapterList = [{
     ],
     "pics": [{
       "detail": "高压注射器",
-      "path": ""
+      "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_1.png"
     }, {
       "detail": "桌子/储物柜",
       "path": ""

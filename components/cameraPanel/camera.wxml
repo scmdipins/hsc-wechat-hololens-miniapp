@@ -1,11 +1,16 @@
-<view class="pic-panel">
-  <view class="pic">
-    <view wx:if="{{picture.path}}">
-    
+<view class="content-box">
+  <view class="pic-panel">
+    <view class="pic">
+      <block wx:if="{{picture.path}}">
+        <image class="pic-img" src="{{picture.path}}"></image>
+      </block>
+      <view class="camera" wx:else bindtap="takePicture">
+        <image class="camera-img"></image>
+      </view>
     </view>
-    <view wx:else>
-      <image class="camera"></image>
-    </view>
+    <view class="detail">{{picture.detail}}</view>
   </view>
-  <view class="detail">{{picture.detail}}</view>
+  <view wx:if="{{picture.path}}" class="delete" bindtap="deletePic">
+    <image class="delete-img"></image>
+  </view>
 </view>

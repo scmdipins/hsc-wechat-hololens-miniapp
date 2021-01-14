@@ -9,43 +9,11 @@ Component({
     }
   },
 
-  ready(){
-    console.log(this.data.picList)
-  },
-
   /**
    * Component initial data
    */
   data: {
 
-
-    cardList: [
-      {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      }, {
-        name: 'aa',
-        content: 'bb'
-      },
-    ]
   },
 
   /**
@@ -53,5 +21,12 @@ Component({
    */
   methods: {
 
+    takePicture: function() {
+      
+    },
+
+    deletePic: function() {
+
+    }
   }
 })

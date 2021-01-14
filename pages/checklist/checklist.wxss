@@ -34,7 +34,6 @@
 .camera-panel {
   width: 82vw;
   margin-top: 1vh;
-  background-color: lightblue;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
