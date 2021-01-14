@@ -47,13 +47,15 @@ Component({
         currentWordNumber: len 
       })
       if (len > this.data.max) return;
+    },
 
+    blur: function(e) {
+      var value = e.detail.value
       var checkItem = this.data.checkItem
       checkItem.failedReason = value
       this.setData({
         checkItem: checkItem
       })
-
       console.log(this.data.checkItem)
     }
 
