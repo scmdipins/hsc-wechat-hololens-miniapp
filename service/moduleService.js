@@ -1,5 +1,4 @@
-const chapterList = [
-  {
+const chapterList = [{
     "id": 1,
     "title": "Chapter 1 : PM BlockCycle",
     "actions": [{
@@ -15,7 +14,20 @@ const chapterList = [
         "result": "Failed",
         "failedReason": "水膜金属针脱落，图像测试未通过。建议保持机房温度稳定。"
       }
-    ]
+    ],
+    "pics": [{
+      "detail": "高压注射器",
+      "path": ""
+    }, {
+      "detail": "桌子/储物柜",
+      "path": ""
+    }, {
+      "detail": "操作台",
+      "path": ""
+    }, {
+      "detail": "机器外壳7S",
+      "path": ""
+    }]
   },
   {
     "id": 2,

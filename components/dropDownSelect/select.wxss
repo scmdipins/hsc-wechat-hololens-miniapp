@@ -47,14 +47,14 @@
 }
 
 .option {
-  height: 5vh;
+  min-height: 5vh;
   line-height: 5vh;
   border-top: 1px solid #e2e2e2;
   padding: 0 2.13vw;
   text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  /* overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; */
   font-size: 14px;
 }
 
