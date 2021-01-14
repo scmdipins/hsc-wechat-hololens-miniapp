@@ -52,6 +52,10 @@
   color: #383838;
 }
 
+.failed {
+  color: #de3735;
+}
+
 .options {
   background: white;
   width: inherit;
