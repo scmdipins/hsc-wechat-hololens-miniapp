@@ -26,7 +26,7 @@ const chapterList = [{
       "path": ""
     }, {
       "detail": "机器外壳7S",
-      "path": ""
+      "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_4.png"
     }]
   },
   {

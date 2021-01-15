@@ -1,5 +1,5 @@
 .content-box {
-  width: 38vw;
+  width: 100%;
   position: relative;
 }
 
