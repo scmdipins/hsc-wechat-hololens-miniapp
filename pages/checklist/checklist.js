@@ -129,6 +129,14 @@ Page({
     })
   },
 
+  goCameraPage: function(e) {
+    var index = e.currentTarget.dataset.index
+    var picList = this.data.picList
+    wx.navigateTo({
+      url: '../camera/camera?index=' + index + '&picList=' + encodeURIComponent(JSON.stringify(picList))
+    })
+  },
+
   updateChapterList: function() {
     var chapterList = this.data.chapterList
     var currentIndex = this.data.chapterSelectIndex
@@ -141,7 +149,7 @@ Page({
     })
     console.log(this.data.chapterList)
   },
-  
+
   prev: function() {
 
   },

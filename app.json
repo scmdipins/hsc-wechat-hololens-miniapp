@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/checklist/checklist",
+    "pages/camera/camera",
     "pages/index/index",
     "pages/logs/logs"
   ],

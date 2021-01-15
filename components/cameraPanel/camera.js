@@ -31,7 +31,7 @@ Component({
             wx.authorize({
               scope: 'scope.camera',
               success: function () {
-                that.takePhoto()
+                that.triggerEvent('camera', true)
               },
               fail: function (e) {
                 console.log(e)
@@ -43,29 +43,11 @@ Component({
               }
             })
           } else {
-            that.takePhoto()
+            that.triggerEvent('camera', true)
           }
         },
         fail: function (e) {
           console.log(e)
-        }
-      })
-    },
-
-    takePhoto: function() {
-      var that = this
-      const ctx = wx.createCameraContext()
-      ctx.takePhoto({
-        quality: 'high',
-        success: (res) => {
-          var picture = that.data.picture
-          picture.path = res.tempImagePath
-          that.setData({
-            picture: picture
-          })
-        },
-        fail: (e) => {
-          console.log(e.detail)
         }
       })
     },
