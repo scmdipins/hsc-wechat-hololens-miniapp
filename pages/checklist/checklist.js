@@ -15,7 +15,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function (_options) {
     this.setActionList(this.data.chapterSelectIndex)
     this.setPicList()
     this.inputModal = this.selectComponent('#inputModal');
@@ -105,25 +105,6 @@ Page({
     
   },
 
-  updateChapterList: function() {
-    var chapterList = this.data.chapterList
-    var currentIndex = this.data.chapterSelectIndex
-    var chapter = chapterList[currentIndex]
-    chapter.actions = this.data.actionList
-    chapterList[currentIndex] = chapter
-    this.setData({
-      chapterList: chapterList
-    })
-  },
-  
-  prev: function() {
-
-  },
-
-  next: function() {
-    
-  },
-
   showInputModal: function() {
     this.inputModal.showModal()
   },
@@ -133,6 +114,40 @@ Page({
       authText: e.detail
     })
     this.authModal.showAuthModal()
-  }
+  },
+
+  setPic(e) {
+    var pic = e.detail
+    var picList = this.data.picList
+    picList.forEach((_item, index) => {
+      if (index == e.currentTarget.dataset.index) {
+        picList[index] = pic
+      }
+    })
+    this.setData({
+      picList: picList
+    })
+  },
+
+  updateChapterList: function() {
+    var chapterList = this.data.chapterList
+    var currentIndex = this.data.chapterSelectIndex
+    var chapter = chapterList[currentIndex]
+    chapter.actions = this.data.actionList
+    chapter.pics = this.data.picList
+    chapterList[currentIndex] = chapter
+    this.setData({
+      chapterList: chapterList
+    })
+    console.log(this.data.chapterList)
+  },
+  
+  prev: function() {
+
+  },
+
+  next: function() {
+    
+  },
 
 })

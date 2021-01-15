@@ -71,7 +71,12 @@ Component({
     },
 
     deletePic: function() {
-
+      var picture = this.data.picture
+      picture.path = ''
+      this.setData({
+        picture: picture
+      })
+      this.triggerEvent('pic', picture)
     }
   }
 })
