@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/module/module",
     "pages/checklist/checklist",
     "pages/camera/camera",
     "pages/index/index",
