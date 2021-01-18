@@ -1,0 +1,78 @@
+.wraper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.camera {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content-box {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.operation-box {
+  width: 80vw;
+  height: 10vh;
+  left: 10vw;
+  bottom: 8vh;
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 36vw;
+  height: 9vh;
+  line-height: 9vh;
+  border-radius: 55rpx;
+  border: 2px solid #fff;
+  font-family: PingFangSC;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-shoot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-confirm {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-takephoto {
+  position: absolute;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+}

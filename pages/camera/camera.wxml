@@ -1,0 +1,16 @@
+<view class='container wraper'>
+  <camera class="camera" device-position="back" flash="off" binderror="error">
+    <cover-view class="content-box">
+      <block wx:if="{{photoUrl}}">
+        <cover-image class="photo-img" src="{{photoUrl}}"></cover-image>
+        <cover-view class="operation-box">
+          <cover-view catchtap="shootAgain" class="btn-shoot btn">重拍</cover-view>
+          <cover-view catchtap="confirm" class="btn-confirm btn">确定</cover-view>
+        </cover-view>
+      </block>
+      <block wx:else>
+        <cover-view catchtap="takePhoto" class="btn-takephoto btn">拍照</cover-view>
+      </block>
+    </cover-view>
+  </camera>
+</view>

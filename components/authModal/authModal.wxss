@@ -1,0 +1,44 @@
+.setting-box {
+  margin-top: -21.23vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setting-dialog {
+  background: white;
+  width: 75vw;
+  padding-top: 4.31vh;
+  padding-bottom: 2.49vh;
+  border: 2px solid #deeaff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.setting-text {
+  font-family: PingFangSC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #1c2d66;
+  margin-bottom: 4.31vh;
+}
+
+.control-panel {
+  width: inherit;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.setting-button {
+  width: 28vw !important;
+  height: 6.63vh;
+  border: 2px solid #deeaff;
+  font-size: 16px;
+  color: #1c2d66;
+  margin-left: 2.4vw;
+  margin-right: 2.4vw; 
+}

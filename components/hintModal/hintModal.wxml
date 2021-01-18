@@ -1,0 +1,19 @@
+<modal backgroundColor="rgba(0,0,0,0.5)" show="{{showHintModal}}">
+  <view class="content-box">
+    <view class="content-dialog">
+      <view class="head">
+        <view class="title">以下Chapter未完成</view>
+        <view class="del-box" bindtap="close">
+          <image class="del-img"></image>
+        </view>
+      </view>
+      <view class="body">
+        <scroll-view class="main-scroll" scroll-y style="height: 100%">
+          <view class="hint" wx:key="index" wx:for="{{hints}}">
+            {{item}}
+          </view>
+        </scroll-view>
+      </view> 
+    </view>
+  </view> 
+</modal>

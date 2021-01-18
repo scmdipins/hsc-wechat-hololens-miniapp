@@ -1,0 +1,68 @@
+.wraper{
+  display: flex;
+  flex-direction: column;
+}
+ 
+.header{
+  flex: 0 0 14vh; 
+  padding-left: 4.8vw;
+  display: flex;
+  align-items: center;
+}
+ 
+.main{
+  flex: 1;
+  position: relative;
+}
+ 
+.main-scroll{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+ 
+.main-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 4.8vw;
+  margin-right: 4.8vw;
+}
+
+.camera-box {
+  width: 82vw;
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.camera-panel {
+  width: 38vw;
+}
+
+.camera-panel:not(:nth-child(2n)) {
+  margin-right: 6vw;
+}
+
+.footer{
+  background-color: lightblue;
+  flex: 0 0 10.6vh; 
+  padding-left: 4.8vw;
+  padding-right: 4.8vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 0 4.3vw;
+  font-family: PingFangSC;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a3670;
+}

@@ -1,0 +1,5 @@
+<view class="content">
+  <textarea class="areas" placeholder='failed reason' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs" value="{{content}}">
+    <text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
+  </textarea>
+</view>

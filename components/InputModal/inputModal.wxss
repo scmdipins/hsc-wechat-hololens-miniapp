@@ -1,0 +1,73 @@
+.content-box {
+  margin-top: -21.23vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-dialog {
+  background: white;
+  width: 75vw;
+  min-height: 26.7vh;
+  padding: 2vh 3.5vw;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: CentraleSans;
+  font-size: 14px;
+  color: rgba(33, 33, 33, 0.8);
+  min-height: 3.65vh;
+  line-height: 1.57;
+  padding: 1vh 0;
+}
+
+.input {
+  height: 6.63vh;
+  border-radius: 5rpx;
+  border: 1.3px solid #c4c4c4;
+  padding: 1vh 3.2vw;
+  box-sizing: border-box;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 4vh;
+}
+
+.btn {
+  width: 18vw;
+  height: 6.63vh;
+  padding: 1.66vh 4.27vw;
+  border-radius: 4rpx;
+  box-sizing: border-box;
+  background-color: #1474a4;
+  font-size: 16px;
+  font-family: CentraleSans;
+  color: #fff;
+}
+
+.btn-confirm {
+  margin-left: 6.4vw;
+}
+
+.btn-cancel {
+  border: none;
+  background-color: #fff;
+  color: #1474a4;
+}
+
+.setting-button {
+  width: 29.33vw;
+  height: 6.63vh;
+  border: 2px solid #deeaff;
+  font-size: 16px;
+  color: #1c2d66;
+  margin-left: 2.4vw;
+  margin-right: 2.4vw;
+}

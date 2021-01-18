@@ -1,0 +1,32 @@
+<view class='container wraper'>
+  <view class='header chapter'>
+    <drop-down-select class="select" prop-array="{{chapterList}}" select-index="{{chapterSelectIndex}}"
+      bind:select="select"></drop-down-select>
+  </view>
+  <view class='main'>
+    <scroll-view class='main-scroll' scroll-y style="height: 100%">
+      <view class='main-list'>
+        <block wx:key="index" wx:for="{{actionList}}">
+          <check-item check-item="{{item}}" min="0" max="150" bind:select="setResult" bind:reason="setReason">
+          </check-item>
+        </block>
+        <view class="camera-box">
+          <block wx:key="index" wx:for="{{picList}}">
+            <camera-panel class="camera-panel" picture="{{item}}" data-index="{{index}}" bind:auth="showCameraAuthModal" bind:pic="setPic" bind:camera="goCameraPage"></camera-panel>
+          </block>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='footer'>
+    <view class="btn" bindtap="prev">上一步</view>
+    <view class="btn" bindtap="next">下一步</view>
+  </view>
+</view>
+
+<input-modal id="inputModal" title="{{currentAction.name}}" bind:confirm="getInput" bind:cancel="cancelInput">
+</input-modal>
+
+<auth-modal id="authModal" auth-text="{{authText}}"></auth-modal>
+
+<hint-modal id="hintModal" hints="{{hints}}"></hint-modal>
