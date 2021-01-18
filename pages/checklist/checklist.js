@@ -1,3 +1,5 @@
+const stringUtil = require('../../utils/string.js')
+
 const moduleServe = require('../../service/moduleService.js')
 
 Page({
@@ -20,9 +22,10 @@ Page({
     this.setPicList()
     this.inputModal = this.selectComponent('#inputModal');
     this.authModal = this.selectComponent('#authModal');
+    this.hintModal = this.selectComponent('#hintModal')
   },
 
-  setPicList: function() {
+  setPicList: function () {
     var chapter = this.data.chapterList[this.data.chapterSelectIndex]
     this.setData({
       picList: chapter.pics
@@ -32,7 +35,7 @@ Page({
   /**
    * select chapter
    */
-  select: function(e) {
+  select: function (e) {
     this.updateChapterList()
     this.setData({
       chapterSelectIndex: e.detail
@@ -43,7 +46,7 @@ Page({
   /**
    * set actionList 
    */
-  setActionList: function(index) {
+  setActionList: function (index) {
     var chapter = this.data.chapterList[index]
     this.setData({
       actionList: chapter.actions
@@ -54,7 +57,7 @@ Page({
   /**
    * set action result 
    */
-  setResult: function(e) {
+  setResult: function (e) {
     var action = e.detail
     if (action.result === '手动输入') {
       this.setData({
@@ -67,7 +70,7 @@ Page({
     }
   },
 
-  cancelInput: function() {
+  cancelInput: function () {
     var action = JSON.parse(JSON.stringify(this.data.currentAction))
     action.result = action.oriResult
     delete action.oriResult
@@ -77,7 +80,7 @@ Page({
   /**
    * get input when choose '手动输入' action
    */
-  getInput: function(e) {
+  getInput: function (e) {
     var action = JSON.parse(JSON.stringify(this.data.currentAction))
     action.result = e.detail
     delete action.oriResult
@@ -87,7 +90,7 @@ Page({
   /**
    * set failed reason of the action
    */
-  setReason: function(e) {
+  setReason: function (e) {
     var action = e.detail
     this.updateActionList(action)
   },
@@ -102,14 +105,14 @@ Page({
     this.setData({
       actionList: actionList
     })
-    
+
   },
 
-  showInputModal: function() {
+  showInputModal: function () {
     this.inputModal.showModal()
   },
 
-  showCameraAuthModal: function(e) {
+  showCameraAuthModal: function (e) {
     this.setData({
       authText: e.detail
     })
@@ -129,7 +132,7 @@ Page({
     })
   },
 
-  goCameraPage: function(e) {
+  goCameraPage: function (e) {
     var index = e.currentTarget.dataset.index
     var picList = this.data.picList
     wx.navigateTo({
@@ -137,7 +140,7 @@ Page({
     })
   },
 
-  updateChapterList: function() {
+  updateChapterList: function () {
     var chapterList = this.data.chapterList
     var currentIndex = this.data.chapterSelectIndex
     var chapter = chapterList[currentIndex]
@@ -150,12 +153,59 @@ Page({
     console.log(this.data.chapterList)
   },
 
-  prev: function() {
+  prev: function () {
+    this.saveAndUpload()
+  },
+
+  next: function () {
+    if (this.hasUnfilledItem()) {
+      this.hintModal.showModal()
+    } else {
+      this.saveAndUpload()
+    }
+  },
+
+  onHide() {
+    this.saveAndUpload()
+  },
+
+  // TODO save and upload modal
+  saveAndUpload() {
 
   },
 
-  next: function() {
-    
-  },
+  hasUnfilledItem() {
+    var hints = []
+    var chapterList = this.data.chapterList
+    for (var i=0; i<chapterList.length; i++) {
+      // debugger
+      var item = chapterList[i]
+      var pics = item.pics
+      var actions = item.actions
+      try {
+        pics.forEach(pic => {
+          if (stringUtil.isStrBlank(pic.path)) {
+            throw new Error('Not completed.')
+          }
+        })
+        actions.forEach(action => {
+          if (stringUtil.isStrBlank(action.result) || action.result == 'Failed' && stringUtil.isStrBlank(action.failedReason)) {
+            throw new Error('Not completed.')
+          }
+        })
+      } catch (e) {
+        hints.push(item.title)
+        continue
+      }
+    }   
+    if (hints.length == 0) {
+      return false
+    } else {
+      this.setData({
+        hints: hints
+      })
+      return true
+    }
+  }
 
 })

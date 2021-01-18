@@ -4,7 +4,8 @@
     "check-item": "../../components/checkItem/checkitem",
     "input-modal": "../../components/InputModal/inputModal",
     "camera-panel": "../../components/cameraPanel/camera",
-    "auth-modal": "../../components/authModal/authModal"
+    "auth-modal": "../../components/authModal/authModal",
+    "hint-modal": "../../components/hintModal/hintModal"
   }, 
   "navigationBarTitleText": "PM 填写"
 }

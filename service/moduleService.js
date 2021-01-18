@@ -5,7 +5,8 @@ const chapterList = [{
         "id": 1,
         "name": "1. System Usage",
         "status": ["Pass", "Failed"],
-        "result": ""
+        "result": "",
+        "groupId": []
       },
       {
         "id": 2,

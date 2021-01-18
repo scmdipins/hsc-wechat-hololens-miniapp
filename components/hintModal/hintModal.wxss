@@ -1,0 +1,81 @@
+.content-box {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content-dialog {
+  background: white;
+  width: 75vw;
+  height: 50vh;
+  padding: 2vh 3.5vw;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+}
+
+.head {
+  width: 100%;
+  height: 5.3vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.title {
+  font-family: CentraleSans;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 0.8);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.del-box {
+  width: 30vw;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.del-img {
+  width: 5.87vw;
+  height: 5.87vw;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAApUlEQVRIS72U0Q2AIAxE6SZsKmzaTTA10UiFXqtBfvjg7kHKtZQWLVrETRc451zkEmY+9ujS/g5MRFtrrUbhAtXerhQjAXr5zPOocQRuaYef54EjzTQVlhFBpXxm3EYADxSCRXAHHQZnclwNcsIF7I3jG3Bh5opiCMGTUkD4l88z4V/jNoX/1yDenOoo6sG1fghFXqqjZo7NZYMeBT56DhskCjz1O43b+BcJUUqZAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.body {
+  width: 100%;
+  flex: 1;
+  padding: 2vh 0;
+  position: relative;
+}
+
+.main-scroll{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.hint {
+  width: 100%;
+  height: 4vh;
+  display: flex;
+  padding: 1vh 0;
+  align-items: center;
+  font-family: CentraleSans;
+  font-size: 14px;
+  color: rgba(33, 33, 33, 0.8);
+}

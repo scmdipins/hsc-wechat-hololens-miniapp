@@ -28,3 +28,5 @@
 </input-modal>
 
 <auth-modal id="authModal" auth-text="{{authText}}"></auth-modal>
+
+<hint-modal id="hintModal" hints="{{hints}}"></hint-modal>

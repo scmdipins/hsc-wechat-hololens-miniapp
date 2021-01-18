@@ -58,7 +58,7 @@
 
 .options {
   background: white;
-  width: inherit;
+  width: 25.6vw;
   position: absolute;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
   border-radius: 4rpx;
@@ -93,10 +93,14 @@
 
 .icon-down {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAmElEQVRIS+2SMQ7CMAxF/W/i5Ga9AgOVChIg0QGGXqE3s3MTo1RUqhDUYejUeLIU5/3kJaCNCxvzqQa4hquivSti5gFAs+bBzMaU0uHXjPuLYowPMzt+AwB4iki7dgA3IG8OIdyJ6PQB6lX17L1yUUCGMPMFwDX3AG4iMvVeFQe8b9Jlvqr2Hnhe/yugFLqcqwGutapoB4pelF4eGRvIqBEAAAAASUVORK5CYII=");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .icon-up {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAkUlEQVRIS+2VMQrDMAxFpZtIPl4P0BIaQkJphh4gx/P3TVwCGdIh+V6yFHmV/J/1MEjl4qMX50sAqOFQFIp+DZjZQ0RqKeVD3WwNzb/I3XsReW33egDvFkgTIKU01VqHfaCqTjnnkUEowMxmVe0OgmYAzzPIKcDdV9c38soFwP2oh07AFLB6AJihWDjU0B8o+gLWlxwZvTT1owAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .fail-reason-box {
