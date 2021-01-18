@@ -1,0 +1,4 @@
+<view class='container wraper'>
+
+  <view bindtap="goChapterList">go chapterlist</view>
+</view>
