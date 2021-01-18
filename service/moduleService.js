@@ -75,6 +75,85 @@ const chapterList = [{
 
 ]
 
+const moduleList = [
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  },
+  {
+    "id": 1, 
+    "name": "module1",
+    "chapterList": []
+  }
+]
+
 module.exports = {
-  chapterList: chapterList
+  chapterList: chapterList,
+  moduleList: moduleList
 }

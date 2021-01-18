@@ -1,4 +1,18 @@
 <view class='container wraper'>
-
-  <view bindtap="goChapterList">go chapterlist</view>
+  <view class='header'>
+    <view class="title">Select the module</view>
+  </view>
+  <view class="body">
+    <scroll-view class='main-scroll' scroll-y style="height: 100%">
+      <view class="main-list">
+        <block wx:key="index" wx:for="{{moduleList}}">
+          <view class="module-box" data-index="{{index}}" bindtap="goChapterList">
+            <view class="module-name">{{item.name}}</view>
+            <image class="module-nav"></image>
+          </view>
+          <view class="line"></view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
 </view>
