@@ -2,19 +2,33 @@ const chapterList = [{
     "id": 1,
     "title": "Chapter 1 : PM BlockCycle",
     "actions": [{
-        "id": 1,
+        "id": "1",
         "name": "1. System Usage",
         "status": ["Pass", "Failed"],
-        "result": "",
-        "groupId": []
+        "result": ""
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "2. PM Block(s) Reported PASS",
         "status": ["Pass", "Failed", "手动输入"],
         "result": "Failed",
         "failedReason": "水膜金属针脱落，图像测试未通过。建议保持机房温度稳定。"
-      }
+      },
+      {
+        "id": "3",
+        "name": "Opt: Standard foot switch",
+        "status": ["Pass", "Failed"],
+        "result": "",
+        "groupId": ["3", "4"]
+      },
+      {
+        "id": "4",
+        "name": "Opt: Multi-function foot switch",
+        "status": ["Pass", "Failed", "手动输入"],
+        "result": "",
+        "groupId": ["3", "4"]
+
+      },
     ],
     "pics": [{
       "detail": "高压注射器",

@@ -51,7 +51,6 @@ Page({
     this.setData({
       actionList: chapter.actions
     })
-
   },
 
   /**
@@ -97,15 +96,28 @@ Page({
 
   updateActionList(action) {
     var actionList = this.data.actionList
-    actionList.forEach((item, index) => {
-      if (action.id == item.id) {
-        actionList[index] = action
-      }
-    })
+    var groupId = action.groupId
+    if (groupId && groupId.length > 0) {
+      groupId.forEach(gId => {
+        actionList.forEach((item, index) => {
+          if (action.id == item.id) {
+            actionList[index] = action
+          }
+          if (gId == item.id && gId !== action.id) {
+            actionList[index].result = ''
+          }
+        })
+      })
+    } else {
+      actionList.forEach((item, index) => {
+        if (action.id == item.id) {
+          actionList[index] = action
+        }
+      })
+    }
     this.setData({
       actionList: actionList
     })
-
   },
 
   showInputModal: function () {
@@ -177,8 +189,7 @@ Page({
   hasUnfilledItem() {
     var hints = []
     var chapterList = this.data.chapterList
-    for (var i=0; i<chapterList.length; i++) {
-      // debugger
+    for (var i = 0; i < chapterList.length; i++) {
       var item = chapterList[i]
       var pics = item.pics
       var actions = item.actions
@@ -197,7 +208,7 @@ Page({
         hints.push(item.title)
         continue
       }
-    }   
+    }
     if (hints.length == 0) {
       return false
     } else {
