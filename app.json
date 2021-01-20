@@ -2,8 +2,12 @@
   "pages": [
     "pages/login/login",
     "pages/module/module",
+    "pages/upkeep/upkeep",
+    "pages/signPhoto/signPhoto",
     "pages/checklist/checklist",
     "pages/camera/camera",
+    "pages/toolingpage/toolingpage",
+    "pages/maintenancepage/maintenancepage",    
     "pages/index/index",
     "pages/logs/logs",
     "pages/main/nocomplete/nocomplete",
@@ -16,7 +20,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#337FBF",
+    "navigationBarBackgroundColor": "#146599",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "white"
   },

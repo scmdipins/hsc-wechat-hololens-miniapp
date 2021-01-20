@@ -4,20 +4,20 @@ Page({
    * Page initial data
    */
   data: {
-    index: 0,
-    picList: []
+    singlePic:null,
+    eventDetail: {},
+    actionList: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    if (options.index) {
-      this.data.index = options.index
+    if (options.eventDetail) {
+      this.data.eventDetail = JSON.parse(decodeURIComponent(options.eventDetail))
     }
-    if (options.picList) {
-      var picList = JSON.parse(decodeURIComponent(options.picList))
-      this.data.picList = picList
+    if (options.actionList) {
+      this.data.actionList = JSON.parse(decodeURIComponent(options.actionList))
     }
   },
 
@@ -42,20 +42,49 @@ Page({
     })
   },
 
-  confirm: function() {
+  confirm: function () {
     let pages = getCurrentPages()
     let prevPage = pages[pages.length - 2]
-    var route = prevPage.route 
+    var route = prevPage.route
     if (route == 'pages/checklist/checklist') {
-      var picList = this.data.picList
-      picList[this.data.index].path = this.data.photoUrl
+      this.updateCheckList()
       prevPage.setData({
-        picList: picList
+        actionList: this.data.actionList
       })
     }
-    wx.navigateBack({
-      delta: 1
+    if (route == 'pages/signPhoto/signPhoto'){
+      prevPage.setData({
+        path: this.data.photoUrl,
+        photo:false,
+      })
+    }
+      wx.navigateBack({
+        delta: 1
+      })
+
+  },
+
+  updateCheckList() {
+    var action = this.updateAction()
+    var actionList = this.data.actionList
+    actionList.forEach((item, index) => {
+      if (action.id == item.id) {
+        actionList[index] = action
+      }
     })
+    this.setData({
+      actionList: actionList
+    })
+  },
+
+  updateAction() {
+    var eventDetail = this.data.eventDetail
+    var action = eventDetail.action
+    var picList = action.pics
+    var picIndex = eventDetail.picIndex
+    picList[picIndex].path = this.data.photoUrl
+    action.pics = picList
+    return action
   }
 
 })

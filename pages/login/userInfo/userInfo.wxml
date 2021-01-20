@@ -19,7 +19,7 @@
             <text>{{ item.field }}</text>
           </view>
           <view class="form-input" style="background-color: {{ item.enable ? '#ffffff' : '#f5f5f5'}};">
-            <input placeholder="{{ item.placeholder }}" disabled="{{ !item.enable }}"/>
+            <input placeholder="{{ item.placeholder }}" disabled="{{ !item.enable }}" maxlength="50"/>
           </view>
         </block>
     </view>
@@ -29,7 +29,7 @@
             <text>{{ item.field }}</text>
           </view>
           <view class="form-input" style="background-color: {{ item.enable ? '#ffffff' : '#f5f5f5'}};">
-            <input placeholder="{{ item.placeholder }}" disabled="{{ !item.enable }}"/>
+            <input placeholder="{{ item.placeholder }}" disabled="{{ !item.enable }}" maxlength="50"/>
           </view>
         </block>
     </view>

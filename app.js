@@ -1,4 +1,7 @@
 // app.js
+var hsc = require('utils/hsc-wx-sdk.js')
+var track = require('utils/hsc-wx-sdk-user.js')
+
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -35,5 +38,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  hsc: hsc
 })

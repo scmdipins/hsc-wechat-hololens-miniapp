@@ -1,0 +1,6 @@
+<!--components/phEdit/phEdit.wxml-->
+
+  <view class="phedit-body">
+    <text class="phedit-caption">{{caption}}</text>
+    <input class="phedit-input" type="{{editType}}" value="{{editValue}}" bindinput="onChange"/>
+  </view>

@@ -135,3 +135,20 @@
   right: 3vw;
   bottom: 1.5vh;
 }
+
+.camera-box {
+  width: 82vw;
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.camera-panel {
+  width: 38vw;
+}
+
+.camera-panel:not(:nth-child(2n)) {
+  margin-right: 6vw;
+}

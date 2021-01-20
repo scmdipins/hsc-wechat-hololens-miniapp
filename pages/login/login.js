@@ -1,4 +1,5 @@
 // pages/login/login.js
+const hsc = getApp().hsc
 Page({
 
   /**
@@ -77,16 +78,11 @@ Page({
       }
       hsc.request(obj).then(res => {
         if(res.statusCode == 200){
-          globalData.phone = res.data.phone;
-          globalData.name = res.data.name;
-          globalData.isLogin = true;
-          wx.switchTab({
-            url: '/pages/mypage/mypage',
-            success: function (e) {
-              var page = getCurrentPages().pop();
-              if (page == undefined || page == null) return;
-              page.onLoad();
-            }
+          // globalData.phone = res.data.phone;
+          // globalData.name = res.data.name;
+          // globalData.isLogin = true;
+          wx.navigateTo({
+            url: '/pages/login/userInfo/userInfo',
           })
         }
       }).catch(res => {

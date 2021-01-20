@@ -1,0 +1,12 @@
+/* pages/maintenancepage/maintenancepage.wxss */
+.maintenancepage-body {
+  height: 90vh;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}

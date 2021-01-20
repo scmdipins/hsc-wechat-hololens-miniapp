@@ -1,0 +1,67 @@
+/* components/phDatePicker/phDatePicker.wxss */
+
+.phdatepicker-body {
+  display: flex;
+  flex-direction: column;  
+  justify-content: flex-start; 
+}
+
+.phdatepicker-caption {
+  font-family: CentraleSans;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: rgba(33, 33, 33, 0.8);
+}
+
+.phdatepicker-picker-body {
+  height: 80rpx;
+  /* width: 100%; */
+  margin: 8rpx 0 0;
+  border-radius: 5rpx;
+  border: solid 2.6rpx #c4c4c4;
+  background-color: #ffffff;
+}
+
+.phdatepicker-picker-view {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;  
+  justify-content: flex-end;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.phdatepicker-date-value {
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.72;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  flex-grow: 1;
+}
+
+.phdatepicker-date-default {
+  font-family: CentraleSans;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: #8c8c8c;
+  flex-grow: 1;
+}
+
+.phdatepicker-date-img {
+  width: 36rpx;
+  height: 36rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "phToolPanel" : "/components/phToolPanel/phToolPanel",
+    "phLine" : "/components/phLine/phLine"
+  }
+}

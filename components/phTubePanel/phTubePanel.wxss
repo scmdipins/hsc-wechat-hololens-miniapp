@@ -1,0 +1,32 @@
+/* components/phTubePanel/phTubePanel.wxss */
+
+.phtubepanel-body {
+  margin-left: 38rpx;
+  margin-right: 38rpx;
+  margin-top: 20rpx;
+  /* margin-bottom: 20rpx; */
+}
+
+.phtubepanel-body-sub {
+  width: 49%;
+}
+
+/* 垂直 */
+.flex-v {
+  display: flex;
+  flex-direction: column;  
+  justify-content: flex-start; 
+}
+/* 横向 */
+.flex-h {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; 
+}
+/* （子）居中 */
+.flex-c {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
