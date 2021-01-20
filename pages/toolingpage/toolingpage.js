@@ -4,18 +4,18 @@ Page({
 
   data: {
     toolItems:[
-      {
-        'toolType': 'TC091-47', // 使用工具型号
-        'toolSN': '92905226', // 工具序列号
-        'toolAdjustDate': '06/13/2020', // 工具校准日期
-        'toolAdjustNextDate': 'MM/DD/YYYY' // 工具下次校准日期 MM/DD/YYYY
-      },
-      {
-        'toolType': 'TC091-47', // 使用工具型号
-        'toolSN': '92905226', // 工具序列号
-        'toolAdjustDate': '06/13/2020', // 工具校准日期
-        'toolAdjustNextDate': null // 工具下次校准日期 MM/DD/YYYY
-      },
+      // {
+      //   'toolType': 'TC091-47', // 使用工具型号
+      //   'toolSN': '92905226', // 工具序列号
+      //   'toolAdjustDate': '06/13/2020', // 工具校准日期
+      //   'toolAdjustNextDate': 'MM/DD/YYYY' // 工具下次校准日期 MM/DD/YYYY
+      // },
+      // {
+      //   'toolType': 'TC091-47', // 使用工具型号
+      //   'toolSN': '92905226', // 工具序列号
+      //   'toolAdjustDate': '06/13/2020', // 工具校准日期
+      //   'toolAdjustNextDate': null // 工具下次校准日期 MM/DD/YYYY
+      // },
     ]
   },
 
@@ -27,20 +27,52 @@ Page({
     }
   }, 
   
-  OnAddTool: function() {
+  onLoad: function(){
+    console.log('onLoad');
+    const that = this;
+    wx.request({
+      url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+      success (res) {
+        console.log(res.data)
+        that.setData({toolItems : res.data ? res.data : []});
+      }
+    })  
+  },
+
+  canAddTool: function() {
+    const toolItems = this.data.toolItems;
+    if ((!toolItems) || (toolItems.length == 0)) {
+      return true;
+    }
+    const item = toolItems[toolItems.length - 1];
+    if ((item.toolType) || (item.toolSN) || (item.toolAdjustDate) || (item.toolAdjustNextDate)) {
+      return true;
+    }
+    return false;
+  },
+
+  onAddTool: function() {
+    if (!this.canAddTool()) {
+      wx.showModal({
+        title: '提示',
+        content: '最后一条记录内容为空',
+        showCancel: false
+      })
+      return;
+    }
     const that = this;
     const toolItems = this.data.toolItems;
     const item = {}; // 'toolType': null, 'toolSN': null, 'toolAdjustDate': null, 'toolAdjustNextDate': null
     toolItems.push(item);
-    console.log('OnAddNewTool', toolItems.length);
+    console.log('onAddTool', toolItems.length);
     that.setData({toolItems}, () => {
       console.log('新增成功');
       that.gotoEndView();
     });
   },
 
-  OnDelTool: function(e) {
-    console.log('OnDelTool', e);
+  onDelTool: function(e) {
+    console.log('onDelTool', e);
     const that = this;
     const index = e.currentTarget.dataset.index;
     wx.showModal({
@@ -59,8 +91,8 @@ Page({
     })
   },
 
-  OnUpdateTool: function(e) {
-    console.log('OnUpdateTool', e);
+  onUpdateTool: function(e) {
+    console.log('onUpdateTool', e.detail);
 
   },
 
@@ -70,19 +102,5 @@ Page({
       toView:"end"
     })
   },
-
-  onLoad: function () {
-    // this.setData({txtValue: globalData.name ? globalData.name : mypageData.MyPageConsts.txtValue});
-    // this.setData({tipValue: globalData.phone ? globalData.phone : mypageData.MyPageConsts.tipValue});
-    // if (!globalData.image) {
-    //   this.setData({imgValue : mypageData.MyPageConsts.imgValue});
-    // } else {
-    //   oss.getRealImageUrlFromOSS(globalData.image).then(res => {
-    //     this.setData({imgValue: res});
-    //   }).catch(res => {
-    //     console.log('Fail getRealImageUrlFromOSS = ' + res);
-    //   });
-    // }
-  }  
 
 })
