@@ -5,21 +5,48 @@ const chapterList = [{
         "id": "1",
         "name": "1. System Usage",
         "status": ["Pass", "Failed"],
-        "result": ""
+        "result": "",
+        "pics": [{
+          "detail": "高压注射器",
+          "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_1.png"
+        }, {
+          "detail": "桌子/储物柜",
+          "path": ""
+        }, {
+          "detail": "操作台",
+          "path": ""
+        }, {
+          "detail": "机器外壳7S",
+          "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_4.png"
+        }]
       },
       {
         "id": "2",
         "name": "2. PM Block(s) Reported PASS",
         "status": ["Pass", "Failed", "手动输入"],
         "result": "Failed",
-        "failedReason": "水膜金属针脱落，图像测试未通过。建议保持机房温度稳定。"
+        "failedReason": "水膜金属针脱落，图像测试未通过。建议保持机房温度稳定。",
+        "pics": [{
+          "detail": "机器外壳7S",
+          "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_4.png"
+        }]
       },
       {
         "id": "3",
         "name": "Opt: Standard foot switch",
         "status": ["Pass", "Failed"],
         "result": "",
-        "groupId": ["3", "4"]
+        "groupId": ["3", "4"],
+        "pics": [{
+          "detail": "高压注射器",
+          "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_1.png"
+        }, {
+          "detail": "桌子/储物柜",
+          "path": ""
+        }, {
+          "detail": "操作台",
+          "path": ""
+        }]
       },
       {
         "id": "4",
@@ -27,22 +54,8 @@ const chapterList = [{
         "status": ["Pass", "Failed", "手动输入"],
         "result": "",
         "groupId": ["3", "4"]
-
-      },
-    ],
-    "pics": [{
-      "detail": "高压注射器",
-      "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_1.png"
-    }, {
-      "detail": "桌子/储物柜",
-      "path": ""
-    }, {
-      "detail": "操作台",
-      "path": ""
-    }, {
-      "detail": "机器外壳7S",
-      "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_4.png"
-    }]
+      }
+    ]
   },
   {
     "id": 2,

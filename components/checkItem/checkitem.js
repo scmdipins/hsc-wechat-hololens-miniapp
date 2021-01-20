@@ -28,7 +28,7 @@ Component({
       })
     },
 
-    setText: function(e) {
+    setText: function (e) {
       var checkItem = this.data.checkItem
       var currentIndex = e.target.dataset.index
       checkItem.oriResult = checkItem.result
@@ -44,12 +44,12 @@ Component({
       var value = e.detail.value;
       var len = parseInt(value.length);
       this.setData({
-        currentWordNumber: len 
+        currentWordNumber: len
       })
       if (len > this.data.max) return;
     },
 
-    blur: function(e) {
+    blur: function (e) {
       var value = e.detail.value
       var checkItem = this.data.checkItem
       checkItem.failedReason = value
@@ -57,6 +57,36 @@ Component({
         checkItem: checkItem
       })
       this.triggerEvent('reason', checkItem)
+    },
+
+    showCameraAuthModal: function (e) {
+      this.triggerEvent('cameraAuth', e.detail)
+    },
+
+    goCameraPage: function (e) {
+      var eventDetail = {
+        'action': this.data.checkItem,
+        'picIndex': e.currentTarget.dataset.index
+      }
+      this.triggerEvent('camera', eventDetail)
+    },
+
+    setPic: function (e) {
+      var pic = e.detail
+      var checkItem = this.data.checkItem
+      var picList = checkItem.pics
+      picList.forEach((_item, index) => {
+        if (index == e.currentTarget.dataset.index) {
+          picList[index] = pic
+        }
+      })
+      checkItem.pics = picList
+      this.setData({
+        checkItem: checkItem
+      })
+
+      this.triggerEvent('pics', this.data.checkItem)
+      // TODO update chapter
     }
 
   }

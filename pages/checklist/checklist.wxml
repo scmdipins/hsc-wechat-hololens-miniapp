@@ -7,14 +7,9 @@
     <scroll-view class='main-scroll' scroll-y style="height: 100%">
       <view class='main-list'>
         <block wx:key="index" wx:for="{{actionList}}">
-          <check-item check-item="{{item}}" min="0" max="150" bind:select="setResult" bind:reason="setReason">
+          <check-item check-item="{{item}}" min="0" max="150" bind:select="setResult" bind:reason="setReason" bind:cameraAuth="showCameraAuthModal" bind:pics="updatePics" bind:camera="goCameraPage">
           </check-item>
         </block>
-        <view class="camera-box">
-          <block wx:key="index" wx:for="{{picList}}">
-            <camera-panel class="camera-panel" picture="{{item}}" data-index="{{index}}" bind:auth="showCameraAuthModal" bind:pic="setPic" bind:camera="goCameraPage"></camera-panel>
-          </block>
-        </view>
       </view>
     </scroll-view>
   </view>
