@@ -4,8 +4,6 @@ Page({
    * Page initial data
    */
   data: {
-    index: 0,
-    picList: [],
     singlePic:null,
     eventDetail: {},
     actionList: []
