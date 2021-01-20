@@ -28,7 +28,7 @@
   <view wx:if="{{checkItem.pics}}" class="camera-box">
     <block wx:key="index" wx:for="{{checkItem.pics}}">
       <camera-panel class="camera-panel" picture="{{item}}" data-index="{{index}}" bind:auth="showCameraAuthModal"
-        bind:pic="setPic" bind:camera="goCameraPage"></camera-panel>
+      bind:pic="setPic" bind:camera="goCameraPage"></camera-panel>
     </block>
   </view>
 </view>
