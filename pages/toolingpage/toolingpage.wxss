@@ -1,0 +1,95 @@
+/* pages/toolingpage/toolingpage.wxss */
+
+.toolingpage-body {
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+  /* margin-top: 20rpx; */
+  /* margin-bottom: 20rpx; */
+  height: 90vh;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.toolingpage-del-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;  
+  justify-content: flex-end;
+  margin-top: 21rpx;
+  margin-bottom: 21rpx;
+}
+
+.toolingpage-del-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.toolingpage-del-txt {
+  font-family: CentraleSans;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: red;
+  margin-left: 20rpx;
+}
+
+.toolingpage-add-body {
+  height: 32rpx;
+}
+
+.toolingpage-add-img {
+  width: 32rpx;
+  height: 32rpx;
+  font-family: dls-icons-24;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1079a9;
+}
+
+.toolingpage-add-txt {
+  height: 44rpx;
+  transform: rotate(360deg);
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1474a4;
+}
+
+/* 垂直 */
+.flex-v {
+  display: flex;
+  flex-direction: column;  
+  justify-content: flex-start; 
+}
+/* 横向 */
+.flex-h {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; 
+}
+/* （子）居中 */
+.flex-c {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
