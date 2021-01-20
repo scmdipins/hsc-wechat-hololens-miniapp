@@ -1,0 +1,48 @@
+	<view class="title">签到</view>
+
+	<view class="photo-body">
+
+		<block wx:if="{{photo}}">
+			<view class="photo" bindtap="hasCameraAuth">
+				<image class="camera" src="/images/camera.png"></image>
+				<view class="photo-text">请在工单地点拍照签到</view>
+			</view>
+		</block>
+		<view wx:else>
+			<image class="photo" src="{{path}}" wx:if="{{!photo}}"></image>
+		</view>
+
+	</view>
+
+	<view class="photo-btn">
+		<block wx:if="{{photo}}">
+			<view class="photo-btn-body" bindtap="hasCameraAuth">拍照签到</view>
+		</block>
+			<view wx:else>
+			<view class="photo-btn-body" bindtap="hasCameraAuth">重新拍摄</view>
+			</view>
+	</view>
+
+
+	<view class="tip-body" >
+
+		<view class="sign-done" wx:if="{{!photo}}">点击下一步完成签到</view>
+
+		<view class="tip">
+			<image class="tip-img" src="/images/site.png"></image>
+			<view class="tip-text">签到地点：贵州医科大学附属医院</view>
+		</view>
+
+		<view class="tip">
+			<image class="tip-img" src="/images/time.png"></image>
+			<view class="tip-text">签到时间：2020/12/26 下午14:02</view>
+		</view>
+	</view>
+
+	<view class="step">
+			<view class="active-hui" wx:if="{{photo}}">下一步</view>
+			<view class="active" wx:else bindtap="nextStep">下一步</view>
+	</view>
+
+
+	<auth-modal id="authModal" auth-text="{{authText}}"></auth-modal>

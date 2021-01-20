@@ -1,0 +1,109 @@
+  <view class="top">
+  	<view class="title">保养信息</view>
+  	<view class="type">SOW: 49062910</view>
+  </view>
+
+  <view class="info-title">
+  	<view class="item-hospital">
+  		<view class="item-name">医院名称</view>
+  		<view class="input-hospital-body">
+  			<input class="input-hospital"></input>
+  		</view>
+  	</view>
+  </view>
+
+  <view class="info">
+  	<view class="item-left">
+  		<view class="item-name">产品型号</view>
+  		<view class="input-body">
+  			<input class="input"></input>
+  		</view>
+  	</view>
+  	<view class="item-right">
+  		<view class="item-name">产品序列号</view>
+  		<view class="input-body">
+  			<input class="input"></input>
+  		</view>
+  	</view>
+
+  	<view class="item-left">
+  		<view class="item-name">设备编号</view>
+  		<view class="input-body">
+  			<input class="input"></input>
+  		</view>
+  	</view>
+  	<view class="item-right">
+  		<view class="item-name">保养年度/次数</view>
+  		<view class="input-body">
+  			<input class="input"></input>
+  		</view>
+  	</view>
+
+
+  	<view class="item-left">
+  		<view class="item-name">保养日期</view>
+
+  		<!-- 服务日期 -->
+  			<picker mode="date" class="dateValue" value="{{dateValue}}" start="{{dateValue}}" end="2999-12-12" bindchange="datePickerBindchange">
+  				<view class="default-value">
+  					<view class="date-content">
+  						{{dateValue}}
+  					</view>
+  				</view>
+  			</picker>
+
+
+
+  	</view>
+  	<view class="item-right">
+  		<view class="item-name">软件版本</view>
+  		<view class="input-body">
+  			<input class="input"></input>
+  		</view>
+  	</view>
+
+  	<view class="item-left">
+  		<view class="item-name">保养工程师</view>
+  		<view class="input-body">
+  			<input class="input"></input>
+  		</view>
+  	</view>
+  	<view class="item-right">
+  	</view>
+
+  </view>
+
+
+  <view class="question">
+  	<view class="question-text">是否有携带Hololens？</view>
+
+  	<view class="choose">
+  		<view class="yes">
+  			<view class="circles" wx:if="{{choose}}" bindtap="chooseYes">
+  				<view class="yes-icon"></view>
+  				<view class="white"></view>
+  			</view>
+  			<view class="no-icon" wx:else bindtap="chooseYes"></view>
+  			<view class="choose-text">是</view>
+  		</view>
+
+  		<view class="no">
+  			<view class="circles" wx:if="{{!choose}}" bindtap="chooseNo">
+  				<view class="yes-icon"></view>
+  				<view class="white"></view>
+  			</view>
+  			<view class="no-icon" wx:else bindtap="chooseNo"></view>
+  			<view class="choose-text">否</view>
+  		</view>
+  	</view>
+
+
+  </view>
+
+
+
+  <view class="step">
+  	<view class="last-step" bindtap="backSignPhoto">上一步</view>
+
+  	<view class="next-step">下一步</view>
+  </view>

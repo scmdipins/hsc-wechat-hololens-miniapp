@@ -4,6 +4,7 @@ Page({
    * Page initial data
    */
   data: {
+    singlePic:null,
     eventDetail: {},
     actionList: []
   },
@@ -51,9 +52,16 @@ Page({
         actionList: this.data.actionList
       })
     }
-    wx.navigateBack({
-      delta: 1
-    })
+    if (route == 'pages/signPhoto/signPhoto'){
+      prevPage.setData({
+        path: this.data.photoUrl,
+        photo:false,
+      })
+    }
+      wx.navigateBack({
+        delta: 1
+      })
+
   },
 
   updateCheckList() {
