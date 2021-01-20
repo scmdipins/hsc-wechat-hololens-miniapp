@@ -115,12 +115,12 @@ const moduleList = [
   },
   {
     "id": 1, 
-    "name": "module1",
+    "name": "Maintenance Summary Page",
     "chapterList": []
   },
   {
     "id": 1, 
-    "name": "module1",
+    "name": "Tooling Page",
     "chapterList": []
   },
   {

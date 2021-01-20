@@ -1,4 +1,6 @@
 // pages/maintenancepage/maintenancepage.js
+const hsc = getApp().hsc;
+
 Page({
 
   data: {
@@ -55,6 +57,27 @@ Page({
 
   onChangeRadioGroup: function(e) {
     console.log('onChangeRadioGroup', e.currentTarget.dataset.index, e.detail);
-  }
+  },
+
+  saveNameToDB : function(newName) {
+    const obj = {
+      url: 'hsc/template/user/name',
+      method: 'POST',
+      data: {name : newName}
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
+        globalData.name = newName;
+        wx.showToast({
+          title: '成功',
+          icon: 'succes',
+          duration: 1000,
+          mask:true
+        })
+      }
+    }).catch(res => {
+      console.log(res.errMsg)
+    })
+  },  
 
 })
