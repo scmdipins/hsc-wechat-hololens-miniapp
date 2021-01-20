@@ -1,0 +1,17 @@
+<!--components/phToolPanel/phToolPanel.wxml-->
+<view id="myToolPanel" class="flex-v">
+  <view class="flex-h">
+    <phEdit class="phtoolpanel-each-body" caption="使用工具型号" editValue="{{toolType}}" bind:onChange="onChangeEdit1" />
+    <view style="width:2%" />
+    <phEdit class="phtoolpanel-each-body" caption="工具序列号" editValue="{{toolSN}}" bind:onChange="onChangeEdit2" />
+  </view>
+  <view style="height:42rpx" />
+  <view class="flex-h">
+    <phDatePicker class="phtoolpanel-each-body" caption="工具校准日期" defaultValue="YYYY/MM/DD"
+      dateValue="{{toolAdjustDate}}" bind:onChange="onChangeDatePicker1" />
+    <view style="width:2%" />
+    <phDatePicker class="phtoolpanel-each-body" caption="工具下次校准日期" defaultValue="YYYY/MM/DD"
+      dateValue="{{toolAdjustNextDate}}" bind:onChange="onChangeDatePicker2" />
+  </view>
+  <view style="height:42rpx" />
+</view>

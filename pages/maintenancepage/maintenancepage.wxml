@@ -1,0 +1,10 @@
+<!--pages/maintenancepage/maintenancepage.wxml-->
+<view class="maintenancepage-body">
+  <view wx:for="{{maintenanceItems}}" wx:for-item="item" wx:key="index">
+    <phTubePanel wx:if="{{item.className == 'TubePanel'}}" data-index="{{index}}" bind:onChange="onChangeTubePanel" />
+    <phRadioGroup wx:elif="{{item.className == 'RadioGroup'}}" caption="{{item.caption}}" data-index="{{index}}"
+      bind:onChange="onChangeRadioGroup" />
+    <text wx:else>Unknown Item : {{item}}</text>
+  </view>
+  <view style="height:15vh" />
+</view>

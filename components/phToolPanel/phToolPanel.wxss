@@ -1,0 +1,24 @@
+/* components/phToolPanel/phToolPanel.wxss */
+.phtoolpanel-each-body {
+  flex: 1;
+}
+
+/* 垂直 */
+.flex-v {
+  display: flex;
+  flex-direction: column;  
+  justify-content: flex-start; 
+}
+/* 横向 */
+.flex-h {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; 
+}
+/* （子）居中 */
+.flex-c {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
