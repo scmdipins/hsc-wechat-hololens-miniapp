@@ -1,0 +1,17 @@
+<!--components/phDatePicker/phDatePicker.wxml-->
+
+<view class="phdatepicker-body">
+  <text class="phdatepicker-caption">{{caption}}</text>
+  <picker class="phdatepicker-picker-body" mode="date" value="{{dateValue ? dateValue : defaultValue}}"
+    start="2021-01-01" end="2999-12-30" bindchange="onChange">
+    <view class="phdatepicker-picker-view">
+      <view wx:if="{{!dateValue}}" class="phdatepicker-date-default">
+        {{defaultValue}}
+      </view>
+      <view wx:else class="phdatepicker-date-value">
+        {{dateValue}}
+      </view>
+      <image class="phdatepicker-date-img" src="/images/calendar@1x.png"></image>
+    </view>
+  </picker>
+</view>

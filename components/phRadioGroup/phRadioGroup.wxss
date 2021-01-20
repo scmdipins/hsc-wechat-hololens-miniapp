@@ -1,0 +1,76 @@
+/* components/phRadioGroup/phRadioGroup.wxss */
+
+.phradiogroup-body {
+  margin-left: 38rpx;
+  margin-right: 38rpx;
+}
+
+.phradiogroup-caption {
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #383838;
+}
+
+.phradiogroup-options-body {
+  height: 36rpx;
+}
+
+.phradiogroup-check1 {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background-color: #1474a4;
+}
+
+.phradiogroup-check2 {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 8rpx;
+  background-color: #ffffff;
+}
+
+.phradiogroup-uncheck {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background-color: #1474a4;  
+  opacity: 0.3;
+}
+
+.phradiogroup-option-txt {
+  height: 48rpx;
+  opacity: 0.8;
+  font-family: CentraleSans;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #212121;
+}
+
+/* 垂直 */
+.flex-v {
+  display: flex;
+  flex-direction: column;  
+  justify-content: flex-start; 
+}
+/* 横向 */
+.flex-h {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; 
+}
+/* （子）居中 */
+.flex-c {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}

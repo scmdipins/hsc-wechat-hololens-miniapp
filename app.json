@@ -5,6 +5,8 @@
     "pages/signPhoto/signPhoto",
     "pages/checklist/checklist",
     "pages/camera/camera",
+    "pages/toolingpage/toolingpage",
+    "pages/maintenancepage/maintenancepage",    
     "pages/index/index",
     "pages/logs/logs"
   ],

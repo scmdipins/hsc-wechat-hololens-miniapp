@@ -10,8 +10,7 @@ Page({
   data: {
     chapterList: moduleServe.chapterList,
     chapterSelectIndex: 0,
-    actionList: [],
-    picList: []
+    actionList: []
   },
 
   /**
@@ -19,17 +18,9 @@ Page({
    */
   onLoad: function (_options) {
     this.setActionList(this.data.chapterSelectIndex)
-    this.setPicList()
     this.inputModal = this.selectComponent('#inputModal');
     this.authModal = this.selectComponent('#authModal');
     this.hintModal = this.selectComponent('#hintModal')
-  },
-
-  setPicList: function () {
-    var chapter = this.data.chapterList[this.data.chapterSelectIndex]
-    this.setData({
-      picList: chapter.pics
-    })
   },
 
   /**
@@ -131,25 +122,18 @@ Page({
     this.authModal.showAuthModal()
   },
 
-  setPic(e) {
-    var pic = e.detail
-    var picList = this.data.picList
-    picList.forEach((_item, index) => {
-      if (index == e.currentTarget.dataset.index) {
-        picList[index] = pic
-      }
-    })
-    this.setData({
-      picList: picList
+  goCameraPage: function (e) {
+    var eventDetail = e.detail
+    var actionList = this.data.actionList
+    wx.navigateTo({
+      url: '../camera/camera?eventDetail=' + encodeURIComponent(JSON.stringify(eventDetail)) + '&actionList='  + encodeURIComponent(JSON.stringify(actionList))
     })
   },
 
-  goCameraPage: function (e) {
-    var index = e.currentTarget.dataset.index
-    var picList = this.data.picList
-    wx.navigateTo({
-      url: '../camera/camera?index=' + index + '&picList=' + encodeURIComponent(JSON.stringify(picList))
-    })
+  updatePics(e) {
+    var action = e.detail
+    this.updateActionList(action)
+    console.log(this.data.actionList)
   },
 
   updateChapterList: function () {
@@ -157,7 +141,6 @@ Page({
     var currentIndex = this.data.chapterSelectIndex
     var chapter = chapterList[currentIndex]
     chapter.actions = this.data.actionList
-    chapter.pics = this.data.picList
     chapterList[currentIndex] = chapter
     this.setData({
       chapterList: chapterList

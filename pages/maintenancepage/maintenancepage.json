@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "phRadioGroup" : "/components/phRadioGroup/phRadioGroup",
+    "phTubePanel" : "/components/phTubePanel/phTubePanel"
+  }
+}
