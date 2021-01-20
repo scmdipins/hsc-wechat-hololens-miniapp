@@ -5,7 +5,8 @@ Page({
    */
   data: {
     index: 0,
-    picList: []
+    picList: [],
+    singlePic:null,
   },
 
   /**
@@ -42,20 +43,27 @@ Page({
     })
   },
 
-  confirm: function() {
+  confirm: function () {
     let pages = getCurrentPages()
     let prevPage = pages[pages.length - 2]
-    var route = prevPage.route 
+    var route = prevPage.route
     if (route == 'pages/checklist/checklist') {
+      debugger
       var picList = this.data.picList
       picList[this.data.index].path = this.data.photoUrl
       prevPage.setData({
         picList: picList
       })
     }
-    wx.navigateBack({
-      delta: 1
-    })
+    if (route == 'pages/signPhoto/signPhoto'){
+      prevPage.setData({
+        path: this.data.photoUrl,
+        photo:false,
+      })
+    }
+      wx.navigateBack({
+        delta: 1
+      })
   }
 
 })

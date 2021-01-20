@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/module/module",
+    "pages/upkeep/upkeep",
+    "pages/signPhoto/signPhoto",
     "pages/checklist/checklist",
     "pages/camera/camera",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/signPhoto/signPhoto"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

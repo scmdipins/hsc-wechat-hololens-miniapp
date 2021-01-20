@@ -1,0 +1,252 @@
+.top{
+  display: flex;
+  width: 100vw;
+  height: 120rpx;
+}
+
+.title{
+  width: 160rpx;
+  height: 60rpx;
+  font-family: PingFangSC;
+  font-size: 40rpx;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: #212121;
+  margin-top: 40rpx;
+  margin-left: 24rpx;
+}
+
+.type{
+  height: 44rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #6f7b79;
+  margin-top: 52rpx;
+  margin-left: 260rpx;
+}
+
+.info-title{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.info{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 22rpx;
+}
+
+.item-hospital{
+  width: 704rpx;
+  height: 132rpx;
+}
+
+.item-name{
+  width: 336rpx;
+  height: 44rpx;
+  font-family: CentraleSans;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: rgba(33, 33, 33, 0.8);
+}
+
+.input-hospital-body{
+  margin-top: 8rpx;
+  width: 100%;
+  height: 80rpx;
+  border-radius: 2.5px;
+  border: solid 1.3px #c4c4c4;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-hospital{
+  width: 90%;
+  height: 100%;
+}
+
+
+.item-left{
+  width: 338rpx;
+  height: 132rpx;
+  margin-top: 24rpx;
+}
+
+
+.item-right{
+  width: 338rpx;
+  height: 132rpx;
+  margin-left: 26rpx;
+  margin-top: 24rpx;
+}
+
+.input-body{
+  margin-top: 8rpx;
+  width: 100%;
+  height: 80rpx;
+  border-radius: 2.5px;
+  border: solid 1.3px #c4c4c4;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input{
+  width: 90%;
+  height: 100%;
+}
+
+.dateValue{
+   margin-top: 8rpx;
+  width: 100%;
+  height: 80rpx;
+  border-radius: 2.5px;
+  border: solid 1.3px #c4c4c4;
+  background-color: #ffffff;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.date-content{
+  margin-left: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question{
+  margin-top: 24rpx;
+
+}
+
+.question-text{
+  width: 406px;
+  height: 56rpx;
+  margin-left:24rpx;
+  font-family: PingFangSC;
+  font-size: 40rpx;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: #212121;
+}
+
+.choose{
+  display: flex;
+}
+
+.yes{
+  display: flex;
+  margin-left: 22rpx;
+  margin-top: 22rpx;
+}
+
+.no{
+  display: flex;
+  margin-left: 82rpx;
+  margin-top: 22rpx;
+}
+
+.yes-icon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #1474a4;
+}
+
+.circles{
+  position: relative;
+}
+
+.white{
+  width: 16rpx;
+  height: 16rpx;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 12rpx;
+  left: 12rpx;
+}
+
+.no-icon{
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+  border-radius: 50%;
+  background-color: #1474a4;
+}
+
+
+.choose-text{
+  width: 28rpx;
+  height: 44rpx;
+  opacity: 0.8;
+  font-family: CentraleSans;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #212121;
+  margin-left: 24rpx;
+}
+
+
+.step{
+  margin-top: 90rpx;
+  width: 100vw;
+  height: 44rpx;
+  display: flex;
+}
+
+.last-step{
+  width: 96rpx;
+  height: 44rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1a3670;
+  margin-left: 68rpx;
+}
+
+.next-step{
+  width: 96rpx;
+  height: 44rpx;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1a3670;
+  margin-left: 424rpx;
+}
