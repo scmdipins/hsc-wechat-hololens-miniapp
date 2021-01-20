@@ -1,0 +1,40 @@
+<view class="info-page"> 
+  <view class="info-title">
+    <text>完善个人信息</text>
+  </view>
+  <view class="info-check">
+    <view class="asp-engineer engineer-common">
+      <view class="check-image {{ selectNum === 1 ? 'selected' : '' }}" bindtap="onSelect" data-index="1" style="background-image: url({{ selectNum === 1 ? '/images/circle-selected.svg' : '' }}); background-size: cover;"></view>
+      <view class="check-text"><text>ASP工程师</text></view>
+    </view>
+    <view class="phi-engineer engineer-common">
+      <view class="check-image {{ selectNum === 2 ? 'selected' : '' }}" bindtap="onSelect" data-index="2"  style="background-image: url({{ selectNum === 2 ? '/images/circle-selected.svg' : '' }}); background-size: cover;"></view>
+      <view class="check-text"><text>飞利浦工程师</text></view>
+    </view>
+  </view>
+  <view class="info-form">
+    <view wx:if="{{ selectNum === 1 }}">
+        <block wx:for="{{ aspItems }}" wx:for-item="item" wx:key="index">
+          <view class="form-field">
+            <text>{{ item.field }}</text>
+          </view>
+          <view class="form-input" style="background-color: {{ item.enable ? '#ffffff' : '#f5f5f5'}};">
+            <input placeholder="{{ item.placeholder }}" disabled="{{ !item.enable }}"/>
+          </view>
+        </block>
+    </view>
+    <view wx:elif="{{ selectNum === 2 }}">
+      <block wx:for="{{ phiItems }}" wx:for-item="item" wx:key="index">
+          <view class="form-field">
+            <text>{{ item.field }}</text>
+          </view>
+          <view class="form-input" style="background-color: {{ item.enable ? '#ffffff' : '#f5f5f5'}};">
+            <input placeholder="{{ item.placeholder }}" disabled="{{ !item.enable }}"/>
+          </view>
+        </block>
+    </view>
+  </view>
+  <view class="phi-button">
+    <view class="button-block">完成</view>
+  </view>
+</view>

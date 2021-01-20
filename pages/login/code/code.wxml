@@ -1,0 +1,16 @@
+<view>
+  <view class="ph-comment">
+    <text>Enter verification code</text>
+  </view>
+  <view class="ph-edit">
+    <view class="content-input-view">
+      <input class="content-input" value="{{ phoneNum }}" bindinput="inputData" maxlength="6"></input>
+    </view>
+  </view>
+  <view class="ph-resend">
+    <view>重发</view>
+  </view>
+  <view class="ph-button-view">
+    <button class="ph-button" bindtap="getVerificationCode">下一步</button>
+  </view>
+</view>
