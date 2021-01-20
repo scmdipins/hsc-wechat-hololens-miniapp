@@ -122,13 +122,12 @@ Page({
     this.authModal.showAuthModal()
   },
 
-  // todo
   goCameraPage: function (e) {
-    // var index = e.currentTarget.dataset.index
-    // var picList = this.data.picList
-    // wx.navigateTo({
-    //   url: '../camera/camera?index=' + index + '&picList=' + encodeURIComponent(JSON.stringify(picList))
-    // })
+    var eventDetail = e.detail
+    var actionList = this.data.actionList
+    wx.navigateTo({
+      url: '../camera/camera?eventDetail=' + encodeURIComponent(JSON.stringify(eventDetail)) + '&actionList='  + encodeURIComponent(JSON.stringify(actionList))
+    })
   },
 
   updatePics(e) {

@@ -64,7 +64,11 @@ Component({
     },
 
     goCameraPage: function (e) {
-      this.triggerEvent('camera', true)
+      var eventDetail = {
+        'action': this.data.checkItem,
+        'picIndex': e.currentTarget.dataset.index
+      }
+      this.triggerEvent('camera', eventDetail)
     },
 
     setPic: function (e) {
