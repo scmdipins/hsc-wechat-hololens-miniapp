@@ -4,7 +4,8 @@
     <view class="status">
       <view class="select-box">
         <view class="select" bindtap="selectToggle">
-          <view class="show-text {{checkItem.result == 'Failed'? 'failed' : ''}}">{{ checkItem.result? checkItem.result : 'Select' }}</view>
+          <view class="show-text {{checkItem.result == 'Failed'? 'failed' : ''}}">
+            {{ checkItem.result? checkItem.result : 'Select' }}</view>
           <view class="icon {{selectShow ? 'icon-up' : 'icon-down'}}"></view>
         </view>
         <view class='options' wx:if="{{ selectShow }}">
@@ -17,10 +18,17 @@
 
   <view wx:if="{{checkItem.result == 'Failed'}}" class="fail-reason-box">
     <view class="fail-reason-content">
-      <textarea class="areas" placeholder='failed reason' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs" bindblur="blur"
-        value="{{checkItem.failedReason}}">
+      <textarea class="areas" placeholder='failed reason' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs"
+        bindblur="blur" value="{{checkItem.failedReason}}">
         <text class="currentWordNumber">{{checkItem.failedReason.length? checkItem.failedReason.length : 0}}/{{max}}</text>
       </textarea>
     </view>
+  </view>
+
+  <view wx:if="{{checkItem.pics}}" class="camera-box">
+    <block wx:key="index" wx:for="{{checkItem.pics}}">
+      <camera-panel class="camera-panel" picture="{{item}}" data-index="{{index}}" bind:auth="showCameraAuthModal"
+        bind:pic="setPic" bind:camera="goCameraPage"></camera-panel>
+    </block>
   </view>
 </view>

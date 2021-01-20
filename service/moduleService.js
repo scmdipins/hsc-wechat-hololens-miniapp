@@ -5,7 +5,20 @@ const chapterList = [{
         "id": "1",
         "name": "1. System Usage",
         "status": ["Pass", "Failed"],
-        "result": ""
+        "result": "",
+        "pics": [{
+          "detail": "高压注射器",
+          "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_1.png"
+        }, {
+          "detail": "桌子/储物柜",
+          "path": ""
+        }, {
+          "detail": "操作台",
+          "path": ""
+        }, {
+          "detail": "机器外壳7S",
+          "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_4.png"
+        }]
       },
       {
         "id": "2",
@@ -27,22 +40,8 @@ const chapterList = [{
         "status": ["Pass", "Failed", "手动输入"],
         "result": "",
         "groupId": ["3", "4"]
-
-      },
-    ],
-    "pics": [{
-      "detail": "高压注射器",
-      "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_1.png"
-    }, {
-      "detail": "桌子/储物柜",
-      "path": ""
-    }, {
-      "detail": "操作台",
-      "path": ""
-    }, {
-      "detail": "机器外壳7S",
-      "path": "https://hsc-feili.oss-cn-shanghai.aliyuncs.com/v2/images/assets/male/bg/bg_4.png"
-    }]
+      }
+    ]
   },
   {
     "id": 2,
