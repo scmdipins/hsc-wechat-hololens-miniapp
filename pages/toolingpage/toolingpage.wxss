@@ -74,6 +74,28 @@
   color: #1474a4;
 }
 
+.toolingpage-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;  
+  justify-content: space-between;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+
+.toolingpage-txt {
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1a3670;
+}
+
 /* 垂直 */
 .flex-v {
   display: flex;

@@ -28,15 +28,11 @@ Page({
   }, 
   
   onLoad: function(){
-    console.log('onLoad');
-    const that = this;
-    wx.request({
-      url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
-      success (res) {
-        console.log(res.data)
-        that.setData({toolItems : res.data ? res.data : []});
-      }
-    })  
+    this.doLoadDB();
+  },
+
+  onHide: function() {
+    this.doApplyDB();
   },
 
   canAddTool: function() {
@@ -61,11 +57,11 @@ Page({
       return;
     }
     const that = this;
-    const toolItems = this.data.toolItems;
-    const item = {}; // 'toolType': null, 'toolSN': null, 'toolAdjustDate': null, 'toolAdjustNextDate': null
+    var toolItems = this.data.toolItems ? this.data.toolItems : [];
+    var item = {}; // 'toolType': null, 'toolSN': null, 'toolAdjustDate': null, 'toolAdjustNextDate': null
     toolItems.push(item);
-    console.log('onAddTool', toolItems.length);
-    that.setData({toolItems}, () => {
+    console.log('onAddTool', toolItems);
+    this.setData({toolItems : toolItems}, () => {
       console.log('新增成功');
       that.gotoEndView();
     });
@@ -82,7 +78,7 @@ Page({
         if (res.confirm) {
           const toolItems = that.data.toolItems;
           toolItems.splice(index, 1);
-          that.setData({toolItems}, () => {
+          that.setData({toolItems : toolItems}, () => {
             console.log('删除成功', index);
             // that.gotoEndView();
           });
@@ -93,7 +89,23 @@ Page({
 
   onUpdateTool: function(e) {
     console.log('onUpdateTool', e.detail);
+    const index = e.currentTarget.dataset.index;
+    const detail = e.detail;
+    var toolItems = this.data.toolItems; // ? this.data.toolItems : [];
+    console.log('toolItems =', toolItems);
+    var item = toolItems[index];
+    console.log('item =', item, index);
 
+    if (detail.funcName == 'onChangeEdit1') {
+      item.toolType = detail.newValue;
+    } else if (detail.funcName == 'onChangeEdit2') {
+      item.toolSN = detail.newValue;
+    } else if (detail.funcName == 'onChangeDatePicker1') {
+      item.toolAdjustDate = detail.newValue;
+    } else if (detail.funcName == 'onChangeDatePicker2') {
+      item.toolAdjustNextDate = detail.newValue;
+    }
+    this.setData({toolItems : toolItems});
   },
 
   gotoEndView: function() {
@@ -102,5 +114,50 @@ Page({
       toView:"end"
     })
   },
+
+  doLoadDB: function() {
+    console.log('doLoadDB');
+    const that = this;
+    wx.request({
+      url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+      success (res) {
+        // console.log(res.data);
+        that.setData({toolItems : res.data}, () => {
+          console.log('doLoadDB success', res.data);
+        });        
+      }
+    })  
+  },
+
+  doApplyDB: function() {
+    console.log('doApplyDB');
+    const toolItems = this.data.toolItems;
+    wx.request({
+      url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+      method: 'POST',     
+      data: {toolItems : toolItems},  
+      success (res) {
+        console.log('doApplyDB success', toolItems);
+      }
+    })  
+  },
+
+  onBack: function() {
+    this.doLoadDB();
+    wx.showModal({
+      title: 'Fake',
+      content: 'doLoadDB',
+      showCancel: false
+    })     
+  },
+
+  onNext: function() {
+    this.doApplyDB();
+    wx.showModal({
+      title: 'Fake',
+      content: 'doApplyDB',
+      showCancel: false
+    })    
+  }
 
 })
