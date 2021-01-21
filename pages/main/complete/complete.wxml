@@ -1,2 +1,3 @@
 <!--pages/main/complete/complete.wxml-->
-<text>pages/main/complete/complete.wxml</text>
+<button bindtap="gotoMaintenancePage">gotoMaintenancePage</button>
+<button bindtap="gotoToolingPage">gotoToolingPage</button>

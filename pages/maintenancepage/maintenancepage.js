@@ -40,7 +40,8 @@ Page({
       //     "caption": "系统校正与图像质量检测",
       //     "options": []
       // }
-    ]
+    ],
+    ticketId: '01BD5357-2E0C-4A3D-A253-2C48500316A7'
   },
 
   onShow: function(){
@@ -95,37 +96,65 @@ Page({
   doLoadDB: function() {
     console.log('doLoadDB');
     const that = this;
-    wx.request({
-      url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
-      success (res) {
-        // console.log(res.data);
+    var obj = {
+      url: 'hsc/hololens/maintenance/' + this.data.ticketId,
+      method: 'GET'
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
         that.setData({maintenanceItems : res.data}, () => {
           console.log('doLoadDB success', res.data);
-        });        
+        });  
       }
-    })  
+    }).catch(res => {
+      console.log(res.errMsg)
+    })
+    // wx.request({
+    //   url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+    //   success (res) {
+    //     // console.log(res.data);
+    //     that.setData({maintenanceItems : res.data}, () => {
+    //       console.log('doLoadDB success', res.data);
+    //     });        
+    //   }
+    // })            
   },
 
   doApplyDB: function() {
     console.log('doApplyDB');
     const maintenanceItems = this.data.maintenanceItems;
-    wx.request({
-      url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
-      method: 'POST',     
+    var obj = {
+      url: 'hsc/hololens/maintenance/' + this.data.ticketId,
+      method: 'POST',
       data: {maintenanceItems : maintenanceItems},  
-      success (res) {
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
         console.log('doApplyDB success', maintenanceItems);
       }
-    })  
+    }).catch(res => {
+      console.log(res.errMsg)
+    })
+    // wx.request({
+    //   url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+    //   method: 'POST',     
+    //   data: {maintenanceItems : maintenanceItems},  
+    //   success (res) {
+    //     console.log('doApplyDB success', maintenanceItems);
+    //   }
+    // })           
   },
 
   onBack: function() {
-    this.doLoadDB();
-    wx.showModal({
-      title: 'Fake',
-      content: 'doLoadDB',
-      showCancel: false
-    })     
+    wx.navigateBack({
+      delta: 1
+    })
+    // this.doLoadDB();
+    // wx.showModal({
+    //   title: 'Fake',
+    //   content: 'doLoadDB',
+    //   showCancel: false
+    // })     
   },
 
   onNext: function() {
