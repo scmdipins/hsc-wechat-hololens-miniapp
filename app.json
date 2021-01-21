@@ -1,9 +1,13 @@
 {
   "pages": [
+<<<<<<< HEAD
+=======
     "pages/login/login",
     "pages/module/module",
+>>>>>>> dev
     "pages/upkeep/upkeep",
     "pages/signPhoto/signPhoto",
+    "pages/module/module",
     "pages/checklist/checklist",
     "pages/camera/camera",
     "pages/toolingpage/toolingpage",
