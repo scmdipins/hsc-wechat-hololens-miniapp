@@ -62,5 +62,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  gotoMaintenancePage: function(){
+    wx.navigateTo({
+      url: '/pages/maintenancepage/maintenancepage',
+    })
+  },
+
+  gotoToolingPage: function() {
+    wx.navigateTo({
+      url: '/pages/toolingpage/toolingpage',
+    })
   }
+    
 })

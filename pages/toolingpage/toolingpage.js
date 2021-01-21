@@ -1,4 +1,5 @@
 // pages/toolingpage/toolingpage.js
+const hsc = getApp().hsc;
 
 Page({
 
@@ -16,7 +17,8 @@ Page({
       //   'toolAdjustDate': '06/13/2020', // 工具校准日期
       //   'toolAdjustNextDate': null // 工具下次校准日期 MM/DD/YYYY
       // },
-    ]
+    ],
+    ticketId: '01BD5357-2E0C-4A3D-A253-2C48500316A7'
   },
 
   onShow: function(){
@@ -118,37 +120,65 @@ Page({
   doLoadDB: function() {
     console.log('doLoadDB');
     const that = this;
-    wx.request({
-      url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
-      success (res) {
-        // console.log(res.data);
+    var obj = {
+      url: 'hsc/hololens/tooling/' + this.data.ticketId,
+      method: 'GET'
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
         that.setData({toolItems : res.data}, () => {
           console.log('doLoadDB success', res.data);
-        });        
+        });  
       }
+    }).catch(res => {
+      console.log(res.errMsg)
     })  
+    // wx.request({
+    //   url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+    //   success (res) {
+    //     // console.log(res.data);
+    //     that.setData({toolItems : res.data}, () => {
+    //       console.log('doLoadDB success', res.data);
+    //     });        
+    //   }
+    // })        
   },
 
   doApplyDB: function() {
     console.log('doApplyDB');
     const toolItems = this.data.toolItems;
-    wx.request({
-      url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
-      method: 'POST',     
+    var obj = {
+      url: 'hsc/hololens/tooling/' + this.data.ticketId,
+      method: 'POST',
       data: {toolItems : toolItems},  
-      success (res) {
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
         console.log('doApplyDB success', toolItems);
       }
-    })  
+    }).catch(res => {
+      console.log(res.errMsg)
+    }) 
+    // wx.request({
+    //   url: 'http://127.0.0.1:8080/tooling/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+    //   method: 'POST',     
+    //   data: {toolItems : toolItems},  
+    //   success (res) {
+    //     console.log('doApplyDB success', toolItems);
+    //   }
+    // })         
   },
 
   onBack: function() {
-    this.doLoadDB();
-    wx.showModal({
-      title: 'Fake',
-      content: 'doLoadDB',
-      showCancel: false
-    })     
+    wx.navigateBack({
+      delta: 1
+    })
+    // this.doLoadDB();
+    // wx.showModal({
+    //   title: 'Fake',
+    //   content: 'doLoadDB',
+    //   showCancel: false
+    // })     
   },
 
   onNext: function() {
