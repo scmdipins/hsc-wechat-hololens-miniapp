@@ -10,3 +10,25 @@
   color: transparent;
   display: none;
 }
+
+.maintenancepage-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;  
+  justify-content: space-between;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+
+.maintenancepage-txt {
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1a3670;
+}

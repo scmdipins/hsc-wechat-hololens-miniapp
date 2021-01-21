@@ -52,44 +52,89 @@ Page({
   },   
 
   onLoad: function(){
-    console.log('onLoad');
-    const that = this;
-    wx.request({
-      url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
-      success (res) {
-        console.log(res.data)
-        that.setData({maintenanceItems : res.data});
-      }
-    })  
+    this.doLoadDB();
+  },
+
+  onHide: function() {
+    this.doApplyDB();
   },
 
   onChangeTubePanel: function(e) {
     console.log('onChangeTubePanel', e.currentTarget.dataset.index, e.detail);
+    const index = e.currentTarget.dataset.index;
+    const detail = e.detail;
+    var maintenanceItems = this.data.maintenanceItems ? this.data.maintenanceItems : [];
+    var item = maintenanceItems[index];
+
+    if (detail.funcName == 'onChangeEdit') {
+      item.exposureSecondsValue = detail.newValue;      
+    } else if (detail.funcName == 'onChangeDatePicker') {
+      item.installDateValue = detail.newValue;
+    }
+    this.setData({maintenanceItems : maintenanceItems});
   },
 
   onChangeRadioGroup: function(e) {
     console.log('onChangeRadioGroup', e.currentTarget.dataset.index, e.detail);
+    const index = e.currentTarget.dataset.index;
+    const detail = e.detail;
+    var maintenanceItems = this.data.maintenanceItems ? this.data.maintenanceItems : [];
+    var item = maintenanceItems[index];
+    var options = item.options ? item.options : [];
+    var iLen = item.options.length > detail.newValue ? item.options.length : detail.newValue;
+    for (var i = options.length; i < iLen; i++) {
+      const opt = {checked : false};
+      item.options.push(opt);
+    }
+    options.forEach(function(opt, index) {
+      opt.checked = index == detail.newValue;
+    });    
+    this.setData({maintenanceItems : maintenanceItems}); 
   },
 
-  saveNameToDB : function(newName) {
-    const obj = {
-      url: 'hsc/template/user/name',
-      method: 'POST',
-      data: {name : newName}
-    }
-    hsc.request(obj).then(res => {
-      if(res.statusCode == 200){
-        globalData.name = newName;
-        wx.showToast({
-          title: '成功',
-          icon: 'succes',
-          duration: 1000,
-          mask:true
-        })
+  doLoadDB: function() {
+    console.log('doLoadDB');
+    const that = this;
+    wx.request({
+      url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+      success (res) {
+        // console.log(res.data);
+        that.setData({maintenanceItems : res.data}, () => {
+          console.log('doLoadDB success', res.data);
+        });        
       }
-    }).catch(res => {
-      console.log(res.errMsg)
-    })
-  },  
+    })  
+  },
+
+  doApplyDB: function() {
+    console.log('doApplyDB');
+    const maintenanceItems = this.data.maintenanceItems;
+    wx.request({
+      url: 'http://127.0.0.1:8080/maintenance/01BD5357-2E0C-4A3D-A253-2C48500316A7',
+      method: 'POST',     
+      data: {maintenanceItems : maintenanceItems},  
+      success (res) {
+        console.log('doApplyDB success', maintenanceItems);
+      }
+    })  
+  },
+
+  onBack: function() {
+    this.doLoadDB();
+    wx.showModal({
+      title: 'Fake',
+      content: 'doLoadDB',
+      showCancel: false
+    })     
+  },
+
+  onNext: function() {
+    this.doApplyDB();
+    wx.showModal({
+      title: 'Fake',
+      content: 'doApplyDB',
+      showCancel: false
+    })    
+  }
 
 })
