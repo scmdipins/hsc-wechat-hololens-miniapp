@@ -1,0 +1,81 @@
+.login-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 87%);
+  background-color: #1474a4;
+}
+
+.images-content{
+  margin: 154rpx 300rpx 196rpx 300rpx;
+  height: 194rpx;
+  object-fit: contain;
+}
+
+.project-title {
+  height: 66rpx;
+  margin: 0 34rpx 110rpx 32rpx;
+  font-family: PingFangSC;
+  font-size: 48rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+}
+
+.button-content {
+  height: 80rpx;
+  margin: 110rpx 34rpx 12rpx 32rpx;
+  border-radius: 2px;
+  background-color: #1c2d66;
+}
+
+.button-modal {
+  padding: unset !important;
+  margin: unset !important;
+  line-height: unset !important;
+  width: unset !important;
+}
+
+.button-body {
+    width: 340rpx;
+    height: 44rpx;
+    margin: 20rpx 172rpx 16rpx 172rpx;
+    transform: rotate(-360deg);
+    font-family: PingFangSC;
+    font-size: 32rpx;
+    font-weight: normal;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icon-image {
+  width: 48rpx;
+  height: 48rpx;
+  object-fit: contain;
+  margin: 0 10rpx 0 14rpx;
+}
+
+.login-phone-body {
+  height: 80rpx;
+  margin: 12rpx 34rpx 92rpx 32rpx;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login-phone-button {
+  margin: 24rpx 0 18rpx 0;
+  transform: rotate(-360deg);
+  font-family: CentraleSans;
+  font-size: 32rpx;
+  font-weight: normal;
+  text-align: center;
+  line-height: 38rpx;
+}

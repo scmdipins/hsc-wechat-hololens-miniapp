@@ -1,39 +1,34 @@
 // app.js
+var hsc = require('utils/hsc-wx-sdk.js')
+var track = require('utils/hsc-wx-sdk-user.js')
+
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
+    const obj = {
+      url: 'hsc/hololens/user/status',
+      method: 'GET'
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
+        if(res.data.name){
+          this.globalData.name = res.data.name;
+          wx.redirectTo({
+            url: '/pages/main/main',
+          })
+        }else{
+          wx.redirectTo({
+            url: '/pages/login/userInfo/userInfo',
           })
         }
+
       }
+    }).catch(res => {
+      console.log(res.errMsg)
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    name: null
+  },
+  hsc: hsc
 })

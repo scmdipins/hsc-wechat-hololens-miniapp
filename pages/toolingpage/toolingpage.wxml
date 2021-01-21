@@ -1,22 +1,23 @@
 <!--pages/toolingpage/toolingpage.wxml-->
 
 <view class="toolingpage-body">
-  <scroll-view style="height:100%;width:100%" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+  <scroll-view style="height:100%;width:100%" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true"
+    enable-back-to-top="true">
     <view style="height:30rpx" />
 
-    <view wx:for="{{toolItems}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+    <view wx:for="{{toolItems}}" wx:for-item="item" wx:key="index">
       <view class="toolingpage-del-view">
-        <image class="toolingpage-del-img" src="/images/delete@1x.png" bindtap="OnDelTool" data-index="{{index}}" />
-        <text class="toolingpage-del-txt" bindtap="OnDelTool" data-index="{{index}}">删除</text>
+        <image class="toolingpage-del-img" src="/images/delete@1x.png" bindtap="onDelTool" data-index="{{index}}" />
+        <text class="toolingpage-del-txt" bindtap="onDelTool" data-index="{{index}}">删除</text>
       </view>
       <phToolPanel toolType="{{item.toolType}}" toolSN="{{item.toolSN}}" toolAdjustDate="{{item.toolAdjustDate}}"
-        toolAdjustNextDate="{{item.toolAdjustNextDate}}" bindchange="OnUpdateTool"/>
+        toolAdjustNextDate="{{item.toolAdjustNextDate}}" bind:onChange="onUpdateTool" data-index="{{index}}" />
       <block wx:if="{{index < toolItems.length - 1}}">
         <phLine />
       </block>
     </view>
 
-    <view class="toolingpage-add-body flex-h" bindtap="OnAddTool">
+    <view class="toolingpage-add-body flex-h" bindtap="onAddTool">
       <view class="toolingpage-add-img">+</view>
       <text class="toolingpage-add-txt">添加新的工具</text>
     </view>
@@ -24,4 +25,7 @@
     <view id="end" style="min-height:66rpx" />
   </scroll-view>
 </view>
-
+<view class="toolingpage-bottom">
+  <text class="toolingpage-txt" bindtap="onBack">上一步</text>
+  <text class="toolingpage-txt" bindtap="onNext">下一步</text>
+</view>

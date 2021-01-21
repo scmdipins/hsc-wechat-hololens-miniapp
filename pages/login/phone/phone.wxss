@@ -1,0 +1,87 @@
+/* pages/accountsecurity/phone/phone.wxss */
+.ph-comment {
+  width: 560rpx;
+  height: 54rpx;
+  margin: 79rpx 158rpx 42rpx 32rpx;
+  font-family: CentraleSans;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #212121;
+}
+
+.ph-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 686rpx;
+  height: 80rpx;
+  margin: 42rpx 34rpx 174rpx 30rpx;
+  border-radius: 4rpx;
+  border: solid 2rpx #c3c7c8;
+  background-color: #ffffff;
+}
+
+.content-image {
+  width: 56rpx;
+  height: 36rpx;
+  margin: 23rpx 35rpx 21rpx 31rpx;
+}
+
+.content-input {
+  height: 44rpx !important;
+  min-height: unset !important;
+  width: 422rpx;
+  margin: 20rpx 142rpx 16rpx 0;
+  font-family: CentraleSans;
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #9e9e9e;
+}
+
+.ph-button-view {
+  height: 80rpx;
+  margin: 174rpx 34rpx 0 30rpx;
+  border-radius: 4rpx;
+  background-color: #337fbf;
+}
+
+.ph-button {
+  width: 91vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 4rpx;
+  transform: rotate(-360deg);
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: 300;
+  text-align: center;
+  color: #ffffff;
+}
+
+.private-comment {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-chectbox {
+    width: 32rpx;
+    height: 32rpx;
+    margin: 62rpx 24rpx 44rpx 34rpx;
+    border-radius: 4rpx;
+    background-color: #c2d8ec;
+}
+
+.comment-text {
+    width: 580rpx;
+    height: 88rpx;
+    margin: 50rpx 80rpx 0 0;
+    font-family: CentraleSans;
+    font-size: 24rpx;
+    font-weight: normal;
+    color: #8f9b9a;
+}
+
+.comment-link {
+  color: #0074bd;
+  text-decoration: underline;
+}

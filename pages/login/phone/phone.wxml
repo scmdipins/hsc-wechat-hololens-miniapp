@@ -1,0 +1,22 @@
+<view>
+  <view class="ph-comment">
+    <text>Link your phone number</text>
+  </view>
+  <view class="ph-edit">
+    <view class="content-image">
+      <image src="/images/china.svg"></image>
+    </view>
+    <view class="content-input-view">
+      <input class="content-input" value="{{ phoneNum }}" bindinput="inputData" maxlength="11"></input>
+    </view>
+  </view>
+  <view class="ph-button-view" style="opacity: {{ (isCheck && isvalid) ? 1 : 0.5}};">
+    <view class="ph-button" bindtap="getVerificationCode">获取验证码</view>
+  </view>
+  <view class="private-comment">
+    <view class="comment-chectbox" style="background-image: url({{ isCheck ? '/images/checked.png' : '' }}); background-size: cover;"  bindtap="onCheck"></view>
+    <view class="comment-text">
+      <text>I agree to the <text class="comment-link"> User Agreement</text> and <text class="comment-link">Privacy Terms</text> of Philips PM Audit</text>
+    </view>
+  </view>
+</view>

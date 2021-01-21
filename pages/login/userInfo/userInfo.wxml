@@ -1,0 +1,74 @@
+<view class="info-page"> 
+  <view class="info-title">
+    <text>完善个人信息</text>
+  </view>
+  <view class="info-check">
+    <view class="asp-engineer engineer-common">
+      <view class="check-image {{ selectNum === 1 ? 'selected' : '' }}" bindtap="onSelect" data-index="1" style="background-image: url({{ selectNum === 1 ? '/images/circle-selected.svg' : '' }}); background-size: cover;"></view>
+      <view class="check-text"><text>ASP工程师</text></view>
+    </view>
+    <view class="phi-engineer engineer-common">
+      <view class="check-image {{ selectNum === 2 ? 'selected' : '' }}" bindtap="onSelect" data-index="2"  style="background-image: url({{ selectNum === 2 ? '/images/circle-selected.svg' : '' }}); background-size: cover;"></view>
+      <view class="check-text"><text>飞利浦工程师</text></view>
+    </view>
+  </view>
+  <view class="info-form">
+    <view wx:if="{{ selectNum === 1 }}">
+        <!-- <block wx:for="{{ aspItems }}" wx:for-item="item" wx:key="index"> -->
+          <view class="form-field">
+            <text>姓名</text>
+          </view>
+          <view class="form-input" style="background-color: #ffffff;">
+            <input placeholder="输入您的姓名" maxlength="50" value="{{ engineerName }}" data-field="engineerName" bindblur="onInput"/>
+          </view>
+
+          <view class="form-field">
+            <text>公司</text>
+          </view>
+          <view class="form-input" style="background-color: #ffffff;">
+            <input placeholder="输入您的公司" maxlength="50" value="{{ engineerCompany }}" data-field="engineerCompany" bindblur="onInput"/>
+          </view>
+          <view class="form-field">
+            <text>手机</text>
+          </view>
+          <view class="form-input" style="background-color: #f5f5f5;">
+            <input placeholder="139282332323" disabled="true" maxlength="50" value="{{ engineerPhone }}" data-field="engineerPhone" bindblur="onInput"/>
+          </view>
+        <!-- </block> -->
+    </view>
+    <view wx:elif="{{ selectNum === 2 }}">
+      <!-- <block wx:for="{{ phiItems }}" wx:for-item="item" wx:key="index"> -->
+          <view class="form-field">
+            <text>ID</text>
+          </view>
+          <view class="form-input" style="background-color: #ffffff;">
+            <input placeholder="输入您的工程师ID" maxlength="50" value="{{ engineerId }}" data-field="engineerId" bindblur="onInput"/>
+          </view>
+
+          <view class="form-field">
+            <text>姓名</text>
+          </view>
+          <view class="form-input" style="background-color: #ffffff;">
+            <input placeholder="输入您的姓名" maxlength="50" value="{{ engineerName }}" data-field="engineerName" bindblur="onInput"/>
+          </view>
+
+          <view class="form-field">
+            <text>手机</text>
+          </view>
+          <view class="form-input" style="background-color: #f5f5f5;">
+            <input placeholder="139282332323" disabled="true" maxlength="50" value="{{ engineerPhone }}" data-field="engineerPhone" bindblur="onInput"/>
+          </view>
+
+          <view class="form-field">
+            <text>邮箱</text>
+          </view>
+          <view class="form-input" style="background-color: #ffffff;">
+            <input placeholder="输入您的飞利浦邮箱" maxlength="50" value="{{ engineerEmail }}" data-field="engineerEmail" bindblur="onInput"/>
+          </view>
+        <!-- </block> -->
+    </view>
+  </view>
+  <view class="phi-button">
+    <view class="button-block" bindtap="onSubmit">完成</view>
+  </view>
+</view>
