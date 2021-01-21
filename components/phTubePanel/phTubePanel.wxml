@@ -1,8 +1,8 @@
 <!--components/phTubePanel/phTubePanel.wxml-->
 <view class="phtubepanel-body flex-h">
-  <phEdit class="phtubepanel-body-sub" caption="{{exposureSecondsCaption}}" editType="number"
-    editValue="{{exposureSecondsValue}}" bind:onChange="onChangeEdit" />
+  <phEdit class="phtubepanel-body-sub" caption="{{exposureSecondsCaption ? exposureSecondsCaption : '当前球管曝光秒数'}}" editType="number"
+    editValue="{{exposureSecondsValue ? exposureSecondsValue : null}}" bind:onChange="onChangeEdit" />
   <view style="width:2%" />
-  <phDatePicker class="phtubepanel-body-sub" caption="{{installDateCaption}}" defaultValue="N/A"
+  <phDatePicker class="phtubepanel-body-sub" caption="{{installDateCaption ? installDateCaption : '当前球管安装日期'}}" defaultValue="N/A"
     dateValue="{{installDateValue}}" bind:onChange="onChangeDatePicker" />
 </view>

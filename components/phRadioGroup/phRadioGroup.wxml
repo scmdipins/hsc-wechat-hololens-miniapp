@@ -5,13 +5,13 @@
   <text class="phradiogroup-caption">{{caption}}</text>
   <view style="height:36rpx"/>
   <view class="phradiogroup-options-body flex-h">
-    <view class="flex-h" wx:for="{{options}}" wx:for-item="item" wx:key="index" bindtap="onChange" data-id="{{index}}">
-      <view wx:if="{{item.checked}}" class="phradiogroup-check1 flex-c">
+    <view class="flex-h" wx:for="{{options}}" wx:for-item="opt" wx:key="index" bindtap="onChange" data-id="{{index}}">  
+      <view wx:if="{{opt.checked}}" class="phradiogroup-check1 flex-c">
         <view class="phradiogroup-check2" />
       </view>
       <view wx:else class="phradiogroup-uncheck"/>
       <view style="width:24rpx"/>
-      <text class="phradiogroup-option-txt">{{item.caption}}</text>
+      <text class="phradiogroup-option-txt">{{opt.caption}}</text>
       <view style="width:70rpx"/>
     </view>
   </view>

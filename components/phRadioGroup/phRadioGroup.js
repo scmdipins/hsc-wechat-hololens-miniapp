@@ -21,8 +21,8 @@ Component({
       // console.log(e.currentTarget.dataset.id);
       const selectedIndex = e.currentTarget.dataset.id;
       const options = this.data.options;
-      options.forEach(function(item, index) {
-        item.checked = index == selectedIndex; 
+      options.forEach(function(opt, index) {
+        opt.checked = index == selectedIndex; 
       });
       this.setData({options});
       var detail = {};
