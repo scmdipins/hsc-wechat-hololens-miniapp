@@ -1,0 +1,17 @@
+<view class="login-content">
+	<view class="images-content">
+		<image class="images-icon" src="/images/philips.png"></image>
+	</view>
+  <view class='project-title'>飞利浦ASP管理系统</view>
+	<view class="button-content">
+		<button class="button-modal" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+			<view class="button-body">
+				<image class="icon-image" src="/images/wechat.png"></image>
+				<view class="button-text">WeChat login</view>
+			</view>
+		</button>
+	</view>
+	<view class="login-phone-body">
+    <view class='login-phone-button' bindtap="onSignUp">Sign up/login with other mobile number</view>
+	</view>
+</view>

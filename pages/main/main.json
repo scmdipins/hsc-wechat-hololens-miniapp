@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nocomplete": "/pages/main/nocomplete/nocomplete",
+    "complete": "/pages/main/complete/complete"
+  }
+}

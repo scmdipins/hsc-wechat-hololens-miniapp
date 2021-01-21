@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/module/module",
     "pages/upkeep/upkeep",
     "pages/signPhoto/signPhoto",
@@ -8,7 +9,14 @@
     "pages/toolingpage/toolingpage",
     "pages/maintenancepage/maintenancepage",    
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/main/nocomplete/nocomplete",
+    "pages/main/complete/complete",
+    "pages/main/main",
+    "pages/login/userInfo/userInfo",
+    "pages/login/code/code",
+    "pages/login/phone/phone"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

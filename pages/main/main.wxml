@@ -1,0 +1,15 @@
+<!-- pages/root/root.wxml -->
+<view class="root">
+    <view class="container">
+        <nocomplete wx:if="{{ selectedItem.pagePath === '/pages/main/nocomplete/nocomplete' }}"></nocomplete>
+        <complete wx:if="{{ selectedItem.pagePath === '/pages/main/complete/complete' }}"></complete> 
+    </view>
+    <view class="tabBar">
+        <block wx:for="{{ tabBarList }}" wx:for-item="item" wx:key="index">
+            <view class="tabBar_item {{item.pagePath == selectedItem.pagePath ? 'item_selected' : ''}}" bindtap="itemTaped" data-item="{{ item }}" data-index="{{ index }}">
+                <text class="tabBar_title {{item.pagePath == selectedItem.pagePath ? 'tabBar_title_selected' : ''}}">{{item.title}}</text>
+            </view>
+        </block>
+    </view>
+</view>
+

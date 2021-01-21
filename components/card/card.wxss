@@ -1,0 +1,125 @@
+
+.content-body{
+  border-radius: 4rpx;
+  box-shadow: 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  margin-bottom: 32rpx;
+  width: 696rpx;
+  /* height: 496rpx; */
+  margin: 0 26rpx 30rpx 28rpx;
+
+}
+
+.card-id {
+  height: 56rpx;
+  padding: 12rpx 20rpx 6rpx 424rpx;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #848c89;
+  display: flex;
+  flex-direction: row;
+}
+
+.id-text {
+  margin: auto 0;
+}
+
+.card-title {
+  height: 56rpx;
+  margin: 6rpx 12rpx 12rpx 30rpx;
+  font-family: PingFangSC;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #212121;
+}
+
+.card-time {
+  display: flex;
+  flex-direction: row;
+}
+
+.device-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-image {
+  display: flex;
+  flex-direction: column;
+  height: 36rpx;
+  margin: 14rpx 10rpx 16rpx 32rpx;
+}
+
+.time-image {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.device-image {
+  margin: 20rpx 0 0 0;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.device-item {
+  margin-top: 14rpx;
+}
+
+
+.item-time {
+    height: 40rpx;
+    margin: auto 0;
+    font-family: PingFangSC;
+    font-size: 28rpx;
+    font-weight: normal;
+    color: #212121;
+    line-height: 40rpx;
+}
+
+.item-text {
+  width: 221px;
+  height: 40rpx;
+  margin: 14rpx 1px 12rpx 0;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #212121;
+}
+
+.check-in {
+  bottom: 26rpx;
+  margin: 0 28rpx 0 42rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.check-person {
+    width: 430rpx;
+    height: 40rpx;
+    margin: 110rpx 54rpx 32rpx 0;
+    font-family: PingFangSC;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #1a3670;
+}
+
+.check-button {
+    width: 142rpx;
+    height: 72rpx;
+    margin: 110rpx 0 26rpx 2rpx;
+    border-radius: 4rpx;
+    background-color: #337fbf;
+    line-height: 72rpx;
+}
+
+.check-button text {
+    height: 44px;
+    transform: rotate(-360deg);
+    font-family: PingFangSC;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 14rpx 24rpx 14rpx 40rpx;
+}

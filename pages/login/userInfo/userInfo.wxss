@@ -1,0 +1,101 @@
+.info-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.info-title {
+  width: 280px;
+  height: 56rpx;
+  margin: 42rpx 158rpx 20rpx 32rpx;
+  font-family: PingFangSC;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #212121;
+}
+
+.info-check {
+  height: 96rpx;
+  margin: 20rpx 98rpx 30rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.asp-engineer {
+    width: 266rpx;
+    height: 96rpx;
+    margin-right: 52rpx;
+}
+
+.phi-engineer {
+    width: 302rpx;
+    height: 96rpx;
+}
+
+.engineer-common {
+  display: flex;
+  flex-direction: row;
+  line-height: 96rpx;
+}
+
+.selected {
+  background-color: unset !important;
+  opacity: unset !important;
+}
+
+.check-image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: auto 24rpx auto 0;
+    background-color: #1474a4;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.form-field {
+    height: 44rpx;
+    margin: 0 400rpx 18rpx 32rpx;
+    font-family: PingFangSC;
+    font-size: 32rpx;
+    font-weight: 300;
+    color: #212121;
+}
+
+.form-input {
+    height: 44rpx;
+    margin: 18rpx 34rpx 42rpx 30rpx;
+    padding: 18rpx 56rpx 18rpx 30rpx;
+    border-radius: 4rpx;
+    border: solid 2rpx #c3c7c8;
+    background-color: #ffffff;
+}
+
+.form-input input {
+    height: 44rpx;
+    font-family: PingFangSC;
+    font-size: 32rpx;
+    font-weight: 300;
+    color: #9e9e9e;
+}
+
+.phi-button {
+    width: 686rpx;
+    height: 80rpx;
+    margin: 0 32rpx;
+    border-radius: 4rpx;
+    background-color: #337fbf;
+    position: absolute;
+    bottom: 86rpx;
+    color: #ffffff;
+}
+
+.button-block {
+    height: 44rpx;
+    margin: 18rpx 32rpx 18rpx 32rpx;
+    font-family: PingFangSC;
+    font-size: 32rpx;
+    font-weight: 300;
+    text-align: center;
+}
