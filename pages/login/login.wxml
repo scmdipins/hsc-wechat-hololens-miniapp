@@ -12,6 +12,6 @@
 		</button>
 	</view>
 	<view class="login-phone-body">
-    <view class='login-phone-button'>Sign up/login with other mobile number</view>
+    <view class='login-phone-button' bindtap="onSignUp">Sign up/login with other mobile number</view>
 	</view>
 </view>

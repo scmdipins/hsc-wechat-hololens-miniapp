@@ -1,18 +1,26 @@
 // pages/login/code/code.js
+const hsc = getApp().hsc;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    key: null,
+    phone: null,
+    code: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.key){
+      this.setData({ key: options.key });
+    }
+    if(options.phone){
+      this.setData({ phone: options.phone });
+    }
   },
 
   /**
@@ -62,5 +70,33 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  inputData: function(e) {
+    const _this = this;
+    const value  = e.detail.value;
+    _this.setData({ code: value});
+  },
+
+  sendVerificationCode: function(){
+    const _this = this;
+    const phoneInfo= {
+      code: _this.data.code,
+      key: _this.data.key
+    }
+    const obj = {
+      url: 'hsc/hololens/user/active',
+      method: 'POST',
+      data: phoneInfo
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
+        wx.redirectTo({
+          url: '/pages/login/userInfo/userInfo',
+        })
+      }
+    }).catch(res => {
+      console.log(res.errMsg)
+    })
   }
 })

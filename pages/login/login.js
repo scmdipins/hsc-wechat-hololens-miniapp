@@ -78,9 +78,6 @@ Page({
       }
       hsc.request(obj).then(res => {
         if(res.statusCode == 200){
-          // globalData.phone = res.data.phone;
-          // globalData.name = res.data.name;
-          // globalData.isLogin = true;
           wx.navigateTo({
             url: '/pages/login/userInfo/userInfo',
           })
@@ -88,7 +85,11 @@ Page({
       }).catch(res => {
         console.log(res.errMsg)
       })
-    
     }
+  },
+  onSignUp: function(){
+    wx.redirectTo({
+      url: '/pages/login/phone/phone',
+    })
   }
 })

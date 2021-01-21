@@ -10,8 +10,8 @@
       <input class="content-input" value="{{ phoneNum }}" bindinput="inputData" maxlength="11"></input>
     </view>
   </view>
-  <view class="ph-button-view">
-    <button class="ph-button" bindtap="getVerificationCode">获取验证码</button>
+  <view class="ph-button-view" style="opacity: {{ (isCheck && isvalid) ? 1 : 0.5}};">
+    <view class="ph-button" bindtap="getVerificationCode">获取验证码</view>
   </view>
   <view class="private-comment">
     <view class="comment-chectbox" style="background-image: url({{ isCheck ? '/images/checked.png' : '' }}); background-size: cover;"  bindtap="onCheck"></view>

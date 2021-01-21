@@ -41,21 +41,19 @@
 .ph-button-view {
   height: 80rpx;
   margin: 174rpx 34rpx 0 30rpx;
-  opacity: 0.5;
   border-radius: 4rpx;
   background-color: #337fbf;
 }
 
 .ph-button {
-  width: 91vw !important;
+  width: 91vw;
   height: 80rpx;
-  line-height: 80rpx !important;
+  line-height: 80rpx;
   border-radius: 4rpx;
-  padding: unset;
   transform: rotate(-360deg);
   font-family: PingFangSC;
-  font-size: 32rpx !important;
-  font-weight: 300 !important;
+  font-size: 32rpx;
+  font-weight: 300;
   text-align: center;
   color: #ffffff;
 }
@@ -74,9 +72,9 @@
 }
 
 .comment-text {
-    width: 560rpx;
+    width: 580rpx;
     height: 88rpx;
-    margin: 50rpx 100rpx 0 0;
+    margin: 50rpx 80rpx 0 0;
     font-family: CentraleSans;
     font-size: 24rpx;
     font-weight: normal;

@@ -1,4 +1,6 @@
 // pages/login/userInfo/userInfo.js
+const hsc = getApp().hsc;
+const globalData = getApp().globalData;
 Page({
 
   /**
@@ -6,45 +8,11 @@ Page({
    */
   data: {
     selectNum: 1,
-    phiItems: [
-      {
-        'field': 'ID',
-        'placeholder': '输入您的工程师ID',
-        'enable': true
-      },
-      {
-        'field': '姓名',
-        'placeholder': '输入您的姓名',
-        'enable': true
-      },
-      {
-        'field': '手机',
-        'placeholder': '139282332323',
-        'enable': false
-      },
-      {
-        'field': '邮箱',
-        'placeholder': '输入您的飞利浦邮箱',
-        'enable': true
-      }
-    ],
-    aspItems: [
-      {
-        'field': '姓名',
-        'placeholder': '输入您的姓名',
-        'enable': true
-      },
-      {
-        'field': '公司',
-        'placeholder': '输入您的公司',
-        'enable': true
-      },
-      {
-        'field': '手机',
-        'placeholder': '139282332323',
-        'enable': false
-      }
-    ]
+    engineerId: null,
+    engineerName: null,
+    engineerPhone: '17721057774',
+    engineerEmail: null,
+    engineerCompany: null
   },
 
   /**
@@ -107,5 +75,40 @@ Page({
     const _this = this;
     const index = Number(e.currentTarget.dataset.index);
     _this.setData({ selectNum: index});
+  },
+
+  onSubmit: function(){
+    const _this = this;
+    const params = {
+      'phone': _this.data.engineerPhone,
+      'email': _this.data.engineerEmail,
+      'company': _this.data.engineerCompany,
+      'enId': _this.data.engineerId,
+      'name': _this.data.engineerName,
+      'type': _this.data.selectNum === 1 ? 'asp' : 'phi'
+    }
+    const obj = {
+      url: 'hsc/hololens/user/checkinfo',
+      method: 'POST',
+      data: params
+    }
+    hsc.request(obj).then(res => {
+      if(res.statusCode == 200){
+        globalData.name = res.data.name;
+        wx.redirectTo({
+          url: '/pages/main/main',
+        })
+      }
+    }).catch(res => {
+      console.log(res.errMsg)
+    })
+    
+  },
+
+  onInput: function(e){
+    const _this = this;
+    const value = e.detail.value;
+    const field = e.currentTarget.dataset.field;
+    _this.setData({ [field]: value });
   }
 })
