@@ -30,12 +30,12 @@
 
 		<view class="tip">
 			<image class="tip-img" src="/images/site.png"></image>
-			<view class="tip-text">签到地点：贵州医科大学附属医院</view>
+			<view class="tip-text">签到地点：{{signSite}}</view>
 		</view>
 
 		<view class="tip">
 			<image class="tip-img" src="/images/time.png"></image>
-			<view class="tip-text">签到时间：2020/12/26 下午14:02</view>
+			<view class="tip-text">签到时间：{{signTime}}</view>
 		</view>
 	</view>
 
